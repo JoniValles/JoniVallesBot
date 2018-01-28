@@ -184,7 +184,7 @@ $conn->set_charset("utf8");
 	
 	
 	
-	 else if($update->message->text == '/pidgey')
+	 else if(substr($update->message->text, 0, 8 ) === "/pidgey ")
     {
 		
 		
@@ -205,7 +205,7 @@ $conn->set_charset("utf8");
  
  
  $trainer = explode(" ", $update->message->text);
- $query = "select latitude,longitude,disappear_time from pokemon where pokemon_id = 16 limit 1";
+ $query = "select latitude,longitude,disappear_time where pokemon_id = 16 limit 1;";
 
  //executing the query 
  mysqli_query($conn, $query) or die('Error querying database.');
@@ -217,7 +217,7 @@ $conn->set_charset("utf8");
     	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
-    		'text' => Pidgey
+    		'text' => $row['latitude'] . " - Gimnasio: " . $row['longitude'] . " - Huecos disponibles: ". $row['disappear_time']
     		]);
 
     }
