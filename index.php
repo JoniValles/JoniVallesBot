@@ -250,6 +250,6 @@ $conn->set_charset("utf8");
 } catch (\Zelenin\Telegram\Bot\NotOkException $e) {
 
     //echo error message ot log it
-    //echo $e->getMessage();
+    echo $e->getMessage();
 
 }
