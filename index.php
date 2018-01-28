@@ -217,7 +217,7 @@ $conn->set_charset("utf8");
     	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
-    		'text' => $row['latitude'] . " - Gimnasio: " . $row['longitude'] . " - Huecos disponibles: ". $row['disappear_time']
+    		'text' => Pidgey
     		]);
 
     }
