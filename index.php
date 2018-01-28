@@ -205,7 +205,7 @@ $conn->set_charset("utf8");
  
  
  $trainer = explode(" ", $update->message->text);
- $query = "select latitude,longitude,disappear_time where pokemon_id = 16 limit 1;";
+ $query = "select latitude,longitude,disappear_time from pokemon where pokemon_id = 16 limit 1;";
 
  //executing the query 
  mysqli_query($conn, $query) or die('Error querying database.');
