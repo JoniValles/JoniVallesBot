@@ -103,7 +103,7 @@ try {
  define('DB_HOST', '83.97.217.51');
  define('DB_USER', 'jonivalles');
  define('DB_PASS', "jvr123");
- define('DB_NAME', 'PMGOviedo0401');
+ define('DB_NAME', 'PMGOviedo2701');
  
  //connecting to database and getting the connection object
  $conn = new mysqli('83.97.217.51', DB_USER, DB_PASS, DB_NAME);
@@ -178,6 +178,51 @@ $conn->set_charset("utf8");
 	
 	
 	
+	
+	
+	else if(substr($update->message->text, 0, 4 ) === "/ex ")
+    {
+		
+		
+		 //connecting to database and getting the connection object
+//database constants
+ define('DB_HOST', '83.97.217.51');
+ define('DB_USER', 'jonivalles');
+ define('DB_PASS', "jvr123");
+ define('DB_NAME', 'PMGOviedo2701');
+ 
+ //connecting to database and getting the connection object
+ $conn = new mysqli('83.97.217.51', DB_USER, DB_PASS, DB_NAME);
+$conn->set_charset("utf8");
+ if (mysqli_connect_errno()) {
+ echo "Failed to connect to MySQL: " . mysqli_connect_error();
+ die();
+ }
+ 
+ 
+ //$trainer = explode(" ", $update->message->text);
+ $query = "select name,level,spawn,start,end from raid inner join gymdetails on raid.gym_id = gymdetails.gym_id inner join gym on raid.gym_id = gym.gym_id where raid.end > now() - interval 1 hour order by end asc;";
+
+ //executing the query 
+ mysqli_query($conn, $query) or die('Error querying database.');
+ $result = mysqli_query($conn, $query);
+ $row = mysqli_fetch_array($result);
+ 
+ while ($row = mysqli_fetch_array($result)) {
+		
+    	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+    	$response = $client->sendMessage([
+    		'chat_id' => $update->message->chat->id,
+    		'text' => " Gimnasio: " . $row['name'] . " - Huecos disponibles: ". $row['level']
+    		]);
+
+    }
+	}
+	
+	
+	
+	
+	
 	##############################################################################################
 	#########################POKEMON##############################################################
 	##############################################################################################
@@ -193,7 +238,7 @@ $conn->set_charset("utf8");
  define('DB_HOST', '83.97.217.51');
  define('DB_USER', 'jonivalles');
  define('DB_PASS', "jvr123");
- define('DB_NAME', 'PMGOviedo0401');
+ define('DB_NAME', 'PMGOviedo2701');
  
  //connecting to database and getting the connection object
  $conn = new mysqli('83.97.217.51', DB_USER, DB_PASS, DB_NAME);
@@ -212,15 +257,14 @@ $conn->set_charset("utf8");
  $result = mysqli_query($conn, $query);
  $row = mysqli_fetch_array($result);
  
- while ($row = mysqli_fetch_array($result)) {
-		
+
     	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
     		'text' => Pidgey
     		]);
 
-    }
+    
 	}
 	
 	
