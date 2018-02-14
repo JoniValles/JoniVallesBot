@@ -134,7 +134,7 @@ $conn->set_charset("utf8");
 	}
 	
 	
-	else if(substr($update->message->text, 0, 6 ) === "/azul ")
+	else if($update->message->text == '/azul')
     {
 		
 		
