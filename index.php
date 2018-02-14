@@ -134,6 +134,45 @@ $conn->set_charset("utf8");
 	}
 	
 	
+	else if(substr($update->message->text, 0, 6 ) === "/azul ")
+    {
+		
+		
+		 //connecting to database and getting the connection object
+//database constants
+ define('DB_HOST', '83.97.217.51');
+ define('DB_USER', 'jonivalles');
+ define('DB_PASS', "jvr123");
+ define('DB_NAME', 'PMGGijon2701');
+ 
+ //connecting to database and getting the connection object
+ $conn = new mysqli('83.97.217.51', DB_USER, DB_PASS, DB_NAME);
+$conn->set_charset("utf8");
+ if (mysqli_connect_errno()) {
+ echo "Failed to connect to MySQL: " . mysqli_connect_error();
+ die();
+ }
+ 
+ 
+ $query = "select slots_available, name,url,cp,trainer_name,latitude,longitude,pokemon_id,team_id,iv_attack,iv_defense,iv_stamina,total_cp from gym inner join gymmember on gym.gym_id = gymmember.gym_id inner join gymdetails on gym.gym_id = gymdetails.gym_id inner join gympokemon on gymmember.pokemon_uid=gympokemon.pokemon_uid where gym.last_scanned > now() - interval 24 hour and team_id = 1 and slots_available > 0  group by name;";
+
+ //executing the query 
+ mysqli_query($conn, $query) or die('Error querying database.');
+ $result = mysqli_query($conn, $query);
+ $row = mysqli_fetch_array($result);
+ 
+ while ($row = mysqli_fetch_array($result)) {
+		
+    	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+    	$response = $client->sendMessage([
+    		'chat_id' => $update->message->chat->id,
+    		'text' => "Gimnasio: " . $row['name'] . " - Huecos disponibles: ". $row['slots_available']
+    		]);
+
+    }
+	}
+	
+	
 	
 	else if(substr($update->message->text, 0, 10 ) === "/gymgijon ")
     {
