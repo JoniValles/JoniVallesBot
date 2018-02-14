@@ -159,7 +159,7 @@ $conn->set_charset("utf8");
  }
  
  
- $query = "select slots_available, name,url,cp,trainer_name,latitude,longitude,pokemon_id,team_id,iv_attack,iv_defense,iv_stamina,total_cp from gym inner join gymmember on gym.gym_id = gymmember.gym_id inner join gymdetails on gym.gym_id = gymdetails.gym_id inner join gympokemon on gymmember.pokemon_uid=gympokemon.pokemon_uid where gym.last_scanned > now() - interval 24 hour and team_id = 1 and slots_available > 0  group by name;";
+ $query = "select slots_available, name,url,cp,trainer_name,latitude,longitude,pokemon_id,team_id,iv_attack,iv_defense,iv_stamina,total_cp from gym inner join gymmember on gym.gym_id = gymmember.gym_id inner join gymdetails on gym.gym_id = gymdetails.gym_id inner join gympokemon on gymmember.pokemon_uid=gympokemon.pokemon_uid where gym.last_scanned > now() - interval 24 hour and team_id = 1 and slots_available > 0  group by name order by slots_available desc;";
 
  //executing the query 
  mysqli_query($conn, $query) or die('Error querying database.');
