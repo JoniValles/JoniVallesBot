@@ -143,13 +143,18 @@ $conn->set_charset("utf8");
  define('DB_HOST', '83.97.217.51');
  define('DB_USER', 'PMG');
  define('DB_PASS', "PMGG");
- define('DB_NAME', 'PMGGijon2701');
+ define('DB_NAME', 'pmggijon2701');
  
  //connecting to database and getting the connection object
  $conn = new mysqli('83.97.217.51', DB_USER, DB_PASS, DB_NAME);
 $conn->set_charset("utf8");
  if (mysqli_connect_errno()) {
  echo "Failed to connect to MySQL: " . mysqli_connect_error();
+ $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+    	$response = $client->sendMessage([
+    		'chat_id' => $update->message->chat->id,
+    		'text' => "Error"
+    		]);
  die();
  }
  
@@ -334,5 +339,10 @@ $conn->set_charset("utf8");
 
     //echo error message ot log it
     echo $e->getMessage();
+	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+    	$response = $client->sendMessage([
+    		'chat_id' => $update->message->chat->id,
+    		'text' => $e
+    		]);
 
 }
