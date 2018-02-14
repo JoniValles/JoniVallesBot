@@ -76,7 +76,7 @@ try {
 		 //connecting to database and getting the connection object
 //database constants
  define('DB_HOST', '83.97.217.51');
- define('DB_USER', 'jonivalles');
+ define('DB_USER', 'root');
  define('DB_PASS', "jvr123");
  define('DB_NAME', 'PMGGijon2701');
  
