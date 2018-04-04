@@ -321,13 +321,13 @@ $conn->set_charset("utf8");
 		
 		 //connecting to database and getting the connection object
 //database constants
- define('DB_HOST', '85.152.108.67');
+ define('DB_HOST', '127.0.0.1');
  define('DB_USER', 'PMG');
  define('DB_PASS', "PMGG");
  define('DB_NAME', 'Pokestopquest');
  
  //connecting to database and getting the connection object
- $conn = new mysqli('85.152.108.67', DB_USER, DB_PASS, DB_NAME);
+ $conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 $conn->set_charset("utf8");
  if (mysqli_connect_errno()) {
  echo "Failed to connect to MySQL: " . mysqli_connect_error();
