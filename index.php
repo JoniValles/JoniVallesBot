@@ -315,6 +315,53 @@ $conn->set_charset("utf8");
 	
 	
 	
+	else if(substr($update->message->text, 0, 9 ) === "/pokestop")
+    {
+		
+		
+		 //connecting to database and getting the connection object
+//database constants
+ define('DB_HOST', '85.152.108.67');
+ define('DB_USER', 'PMG');
+ define('DB_PASS', "PMGG");
+ define('DB_NAME', 'Pokestopquest');
+ 
+ //connecting to database and getting the connection object
+ $conn = new mysqli('85.152.108.67', DB_USER, DB_PASS, DB_NAME);
+$conn->set_charset("utf8");
+ if (mysqli_connect_errno()) {
+ echo "Failed to connect to MySQL: " . mysqli_connect_error();
+ $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+    	$response = $client->sendMessage([
+    		'chat_id' => $update->message->chat->id,
+    		'text' => ERROR
+    		]);
+ die();
+ }
+ 
+ 
+ $trainer = explode(" ", $update->message->text);
+ $query = "select * from pokestopq;";
+
+ //executing the query 
+ mysqli_query($conn, $query) or die('Error querying database.');
+ $result = mysqli_query($conn, $query);
+ $row = mysqli_fetch_array($result);
+ 
+
+    	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+    	$response = $client->sendMessage([
+    		'chat_id' => $update->message->chat->id,
+    		'text' => Pidgey
+    		]);
+
+    
+	}
+	
+	
+	
+	
+	
     else if($update->message->text == '/latest')
     {
     		Feed::$cacheDir 	= __DIR__ . '/cache';
