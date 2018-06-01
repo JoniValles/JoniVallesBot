@@ -451,6 +451,7 @@ while ($row = mysqli_fetch_array($result)) {
     	
 
     }
+	join("\r\n", $data);
 	
 	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
     	$response = $client->sendMessage([
