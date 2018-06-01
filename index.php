@@ -447,16 +447,15 @@ $conn->set_charset("utf8");
  
 while ($row = mysqli_fetch_array($result)) {
 		
-		$data .= "ID: " .$row['id']." - Recompensa: " . $row['Recompensa'] . " - Pokeparada: ". $row['Pokeparada'];
+		$data = $data . "IDD: " .$row['id']." - Recompensa: " . $row['Recompensa'] . " - Pokeparada: ". $row['Pokeparada'];
     	
 
     }
-	join("\r\n", $data);
 	
 	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
-    		'text' => urlencode($data)
+    		'text' => $data
     		]);
 	}
 	
