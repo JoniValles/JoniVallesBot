@@ -321,7 +321,7 @@ $conn->set_charset("utf8");
 		
 		 //connecting to database and getting the connection object
 //database constants
- define('DB_HOST', '127.0.0.1');
+ define('DB_HOST', '85.152.108.67');
  define('DB_USER', 'PMG');
  define('DB_PASS', "PMGG");
  define('DB_NAME', 'Pokestopquest');
@@ -353,6 +353,55 @@ $conn->set_charset("utf8");
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
     		'text' => Pidgey
+    		]);
+
+    
+	}
+	
+	
+	
+	//Misiones
+	
+	
+	
+	else if(substr($update->message->text, 0, 11 ) === "/aerodactyl")
+    {
+		
+		
+		 //connecting to database and getting the connection object
+//database constants
+ define('DB_HOST', 'den1.mysql2.gear.host');
+ define('DB_USER', 'pmgmisiones');
+ define('DB_PASS', "Mw78_Gz8-CJs");
+ define('DB_NAME', 'PMGMisiones');
+ 
+ //connecting to database and getting the connection object
+ $conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+$conn->set_charset("utf8");
+ if (mysqli_connect_errno()) {
+ echo "Failed to connect to MySQL: " . mysqli_connect_error();
+ $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+    	$response = $client->sendMessage([
+    		'chat_id' => $update->message->chat->id,
+    		'text' => ERROR
+    		]);
+ die();
+ }
+ 
+ 
+ $trainer = explode(" ", $update->message->text);
+ $query = "select * from mision;";
+
+ //executing the query 
+ mysqli_query($conn, $query) or die('Error querying database.');
+ $result = mysqli_query($conn, $query);
+ $row = mysqli_fetch_array($result);
+ 
+
+    	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+    	$response = $client->sendMessage([
+    		'chat_id' => $update->message->chat->id,
+    		'text' => " Recompensa: " . $row['recompensa'] . " - Pokeparada: ". $row['pokeparada']
     		]);
 
     
