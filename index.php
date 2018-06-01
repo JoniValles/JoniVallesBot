@@ -455,7 +455,7 @@ while ($row = mysqli_fetch_array($result)) {
 	
 	//AÑADIR
 	
-	else if(substr($update->message->text, 0, 7) === "/añadir")
+	else if(substr($update->message->text, 0, 10) === "/confirmar")
     {
 		
 		
