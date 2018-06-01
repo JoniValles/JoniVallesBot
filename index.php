@@ -495,7 +495,7 @@ $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'a
 	
 	//AÑADIR MISION
 	
-	else if(substr($update->message->text, 0, 9) === "/confirmar")
+	else if(substr($update->message->text, 0, 10) === "/confirmar")
     {
 		
 		
