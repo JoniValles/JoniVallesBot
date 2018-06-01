@@ -364,7 +364,7 @@ $conn->set_charset("utf8");
 	
 	
 	
-	else if(substr($update->message->text, 0, 11 ) === "/aerodactyl")
+	else if(substr($update->message->text, 0, 9 ) === "/misiones")
     {
 		
 		
@@ -401,7 +401,7 @@ $conn->set_charset("utf8");
     	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
-    		'text' => " Recompensa: " . $row['recompensa'] . " - Pokeparada: ". $row['pokeparada']
+    		'text' => " Recompensa: " . $row['Recompensa'] . " - Pokeparada: ". $row['Pokeparada']
     		]);
 
     
