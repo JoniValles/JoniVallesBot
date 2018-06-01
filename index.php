@@ -521,7 +521,7 @@ $conn->set_charset("utf8");
  $pokestop = explode(' ', $update->message->text);
  $data = " ";
  for($x = 2; $x < $trainer; $x++) {
-    $data .= $trainer[$x];
+    $data = ·$data + $trainer[$x];
 }
  
  $query = "insert into mision (Recompensa, Pokeparada) values ('$trainer[1]','$data')";
