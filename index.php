@@ -402,7 +402,7 @@ while ($row = mysqli_fetch_array($result)) {
     	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
-    		'text' => " Recompensa: " . $row['Recompensa'] . " - Pokeparada: ". $row['Pokeparada']
+    		'text' => "Nº: " .$row['id']." - Recompensa: " . $row['Recompensa'] . " - Pokeparada: ". $row['Pokeparada']
     		]);
 
     }
@@ -447,7 +447,7 @@ while ($row = mysqli_fetch_array($result)) {
     	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
-    		'text' => " Aerodactyl - Pokeparada: ". $row['Pokeparada']
+    		'text' => "Aerodactyl - Pokeparada: ". $row['Pokeparada']
     		]);
 
     }
