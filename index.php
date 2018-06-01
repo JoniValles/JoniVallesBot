@@ -518,8 +518,13 @@ $conn->set_charset("utf8");
  
  
  $trainer = explode(" ", $update->message->text);
- $pokestop = explode('"', $update->message->text);
- $query = "insert into mision (Recompensa, Pokeparada) values ('$trainer[1]','$pokestop[1]')";
+ $pokestop = explode(' ', $update->message->text);
+ $data = " ";
+ for($x = 2; $x < $trainer; $x++) {
+    $data += $trainer[$x];
+}
+ 
+ $query = "insert into mision (Recompensa, Pokeparada) values ('$trainer[1]','$data')";
 
  //executing the query 
  mysqli_query($conn, $query) or die('Error querying database.');
@@ -527,6 +532,52 @@ $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'a
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
     		'text' => "Mision confirmada!"
+    		]);
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	//BORRAR
+	
+	else if(substr($update->message->text, 0, 7) === "/borrar")
+    {
+		
+		
+		 //connecting to database and getting the connection object
+//database constants
+ define('DB_HOST', 'den1.mysql2.gear.host');
+ define('DB_USER', 'pmgmisiones');
+ define('DB_PASS', "Mw78_Gz8-CJs");
+ define('DB_NAME', 'PMGMisiones');
+ 
+ //connecting to database and getting the connection object
+ $conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+$conn->set_charset("utf8");
+ if (mysqli_connect_errno()) {
+ echo "Failed to connect to MySQL: " . mysqli_connect_error();
+ $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+    	$response = $client->sendMessage([
+    		'chat_id' => $update->message->chat->id,
+    		'text' => ERROR
+    		]);
+ die();
+ }
+
+ $query = "DELETE FROM mision;";
+
+ //executing the query 
+ mysqli_query($conn, $query) or die('Error querying database.');
+$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+    	$response = $client->sendMessage([
+    		'chat_id' => $update->message->chat->id,
+    		'text' => "Borradas todas las misiones!"
     		]);
 	}
 	
