@@ -362,7 +362,7 @@ $conn->set_charset("utf8");
 	
 	//Misiones
 	
-	
+	/* MENSAJE MULTILINEA
 	
 	else if(substr($update->message->text, 0, 9 ) === "/misiones")
     {
@@ -406,12 +406,12 @@ while ($row = mysqli_fetch_array($result)) {
     		]);
 
     }
-	}
+	} */
 	
 	
 	
 	
-	else if(substr($update->message->text, 0, 8 ) === "/misione")
+	else if(substr($update->message->text, 0, 9 ) === "/misiones")
     {
 		
 		
@@ -447,7 +447,7 @@ $conn->set_charset("utf8");
  
 while ($row = mysqli_fetch_array($result)) {
 		
-		$data = $data . "IDD: " .$row['id']." - Recompensa: " . $row['Recompensa'] . " - Pokeparada: ". $row['Pokeparada'] . "\n";
+		$data = $data . "ID: " .$row['id']." - Recompensa: " . $row['Recompensa'] . " - Pokeparada: ". $row['Pokeparada'] . "\n";
     	
 
     }
