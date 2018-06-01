@@ -520,8 +520,8 @@ $conn->set_charset("utf8");
  $trainer = explode(" ", $update->message->text);
  $pokestop = explode(' ', $update->message->text);
  $data = $trainer;
- unset(data[0]);
- unset(data[1]);
+ unset($data[0]);
+ unset($data[1]);
  $finalData = implode(" ", $data);
 
  
