@@ -476,7 +476,7 @@ $conn->set_charset("utf8");
  
  
  $mision = explode(" ", $update->message->text);
- $query = "insert into mision (Recompensa,Pokeparada) values ('$mision[1]', '$mision[2]');";
+ $query = "insert into mision (Recompensa,Pokeparada) values (".'$mision[1]'",". '$mision[2]'");";
 
  //executing the query 
  mysqli_query($conn, $query) or die('Error querying database.');
