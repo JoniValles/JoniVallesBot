@@ -411,7 +411,7 @@ while ($row = mysqli_fetch_array($result)) {
 	
 	
 	
-	else if(substr($update->message->text, 0, 10 ) === "/misioness")
+	else if(substr($update->message->text, 0, 8 ) === "/misione")
     {
 		
 		
@@ -443,7 +443,7 @@ $conn->set_charset("utf8");
  mysqli_query($conn, $query) or die('Error querying database.');
  $result = mysqli_query($conn, $query);
  $row = mysqli_fetch_array($result);
- $data = "";
+ $data = "asdasd ";
  
 while ($row = mysqli_fetch_array($result)) {
 		
