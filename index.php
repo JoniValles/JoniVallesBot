@@ -443,11 +443,11 @@ $conn->set_charset("utf8");
  mysqli_query($conn, $query) or die('Error querying database.');
  $result = mysqli_query($conn, $query);
  $row = mysqli_fetch_array($result);
- $data = "asdasd ";
+ $data = "";
  
 while ($row = mysqli_fetch_array($result)) {
 		
-		$data = $data . "IDD: " .$row['id']." - Recompensa: " . $row['Recompensa'] . " - Pokeparada: ". $row['Pokeparada'];
+		$data = $data . "IDD: " .$row['id']." - Recompensa: " . $row['Recompensa'] . " - Pokeparada: ". $row['Pokeparada'] . "\n";
     	
 
     }
