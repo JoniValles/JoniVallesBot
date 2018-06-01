@@ -455,7 +455,7 @@ while ($row = mysqli_fetch_array($result)) {
 	
 	//AÑADIR
 	
-	else if(substr($update->message->text, 0, 7 ) === "/añadir")
+	else if(substr($update->message->text, 0, 7) === "/añadir")
     {
 		
 		
@@ -471,24 +471,29 @@ while ($row = mysqli_fetch_array($result)) {
 $conn->set_charset("utf8");
  if (mysqli_connect_errno()) {
  echo "Failed to connect to MySQL: " . mysqli_connect_error();
+ $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+    	$response = $client->sendMessage([
+    		'chat_id' => $update->message->chat->id,
+    		'text' => ERROR
+    		]);
  die();
  }
  
  
- $mision = explode(" ", $update->message->text);
- $query = "select * from mision";
+ $trainer = explode(" ", $update->message->text);
+ $query = "select * from mision;";
 
  //executing the query 
  mysqli_query($conn, $query) or die('Error querying database.');
  $result = mysqli_query($conn, $query);
  $row = mysqli_fetch_array($result);
  
- while ($row = mysqli_fetch_array($result)) {
+while ($row = mysqli_fetch_array($result)) {
 		
     	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
-    		'text' => "Misión añadida!"
+    		'text' => " Recompensa: " . $row['Recompensa'] . " - Pokeparada: ". $row['Pokeparada']
     		]);
 
     }
