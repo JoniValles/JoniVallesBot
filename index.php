@@ -454,7 +454,7 @@ while ($row = mysqli_fetch_array($result)) {
 	}
 	
 	//AÑADIR
-	
+	/*
 	else if(substr($update->message->text, 0, 10) === "/confirmar")
     {
 		
@@ -490,9 +490,12 @@ $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'a
     		'chat_id' => $update->message->chat->id,
     		'text' => "Mision confirmada!"
     		]);
-	}
+	}*/
 	
-	else if(substr($update->message->text, 0, 9) === "/confirma")
+	
+	//AÑADIR MISION
+	
+	else if(substr($update->message->text, 0, 9) === "/confirmar")
     {
 		
 		
@@ -532,7 +535,7 @@ $conn->set_charset("utf8");
 $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
-    		'text' => "Mision confirmadaaa '$finalData' " . $finalData
+    		'text' => "Mision confirmada!"
     		]);
 	}
 	
