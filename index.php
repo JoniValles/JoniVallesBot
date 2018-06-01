@@ -397,15 +397,21 @@ $conn->set_charset("utf8");
  $result = mysqli_query($conn, $query);
  $row = mysqli_fetch_array($result);
  
-
+while ($row = mysqli_fetch_array($result)) {
+		
     	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
     		'text' => " Recompensa: " . $row['Recompensa'] . " - Pokeparada: ". $row['Pokeparada']
     		]);
 
+    }
+    	
+
     
 	}
+	
+	
 	
 	
 	
