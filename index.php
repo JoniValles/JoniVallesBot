@@ -481,22 +481,15 @@ $conn->set_charset("utf8");
  
  
  $trainer = explode(" ", $update->message->text);
- $query = "select * from mision;";
+ $query = "insert into mision (Recompensa, Pokeparada) values ('$trainer[1]','$trainer[2]')";
 
  //executing the query 
  mysqli_query($conn, $query) or die('Error querying database.');
- $result = mysqli_query($conn, $query);
- $row = mysqli_fetch_array($result);
- 
-while ($row = mysqli_fetch_array($result)) {
-		
-    	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
-    		'text' => " Recompensa: " . $row['Recompensa'] . " - Pokeparada: ". $row['Pokeparada']
+    		'text' => "Vamos Pablo sal a bailar que tu lo haces fenomenal tu cuerpo se mueve como una palmera suave, suave, su, su, suave"
     		]);
-
-    }
 	}
 	
 	
