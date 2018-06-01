@@ -519,7 +519,7 @@ $conn->set_charset("utf8");
  
  $trainer = explode(" ", $update->message->text);
  $pokestop = explode('"', $update->message->text);
- $query = "insert into mision (Recompensa, Pokeparada) values ('$trainer[1]','$pokestop[0]')";
+ $query = "insert into mision (Recompensa, Pokeparada) values ('$trainer[1]','$pokestop[1]')";
 
  //executing the query 
  mysqli_query($conn, $query) or die('Error querying database.');
