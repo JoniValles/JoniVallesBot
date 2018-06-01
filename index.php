@@ -492,7 +492,7 @@ $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'a
     		]);
 	}
 	
-	else if(substr($update->message->text, 0, 11) === "/confirmare")
+	else if(substr($update->message->text, 0, 9) === "/confirma")
     {
 		
 		
