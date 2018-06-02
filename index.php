@@ -17,11 +17,16 @@
 * © 2015 Kasra Madadipouya <kasra@madadipouya.com>
 *
 */
+
 require 'vendor/autoload.php';
+use Telegram\Bot\Api;
 $client = new Zelenin\Telegram\Bot\Api('544381336:AAGnNEVqil8XIxMUyd61wSOUZVM3thxzTNQ'); // Set your access token
 $url = ''; // URL RSS feed
 $update = json_decode(file_get_contents('php://input'));
 $bot = new \TelegramBot\Api\BotApi('544381336:AAGnNEVqil8XIxMUyd61wSOUZVM3thxzTNQ');
+
+
+$telegram = new Api('B544381336:AAGnNEVqil8XIxMUyd61wSOUZVM3thxzTNQ');
 
  
 
@@ -104,11 +109,11 @@ try {
 
     }else if($update->message->text == '/prueba') {
 			
- 
-			
-			$chatId = $update->message->chat->id;
-			$messageText = "a";
-			$bot->sendMessage($chatId, $messageText);
+ $response = $telegram->getMe();
+
+$botId = $response->getId();
+$firstName = $response->getFirstName();
+$username = $response->getUsername();
 
     }
 	
