@@ -102,6 +102,14 @@ try {
     		'text' => "Casual"
     		]);
 
+    }else if($update->message->text == '/prueba') {
+			
+ 
+			
+			$chatId = $update->message->chat->id;
+			$messageText = "a";
+			$bot->sendMessage($chatId, $messageText);
+
     }
 	
 	
