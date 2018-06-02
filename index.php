@@ -120,14 +120,9 @@ try {
     }
 	else if($update->message->text == '/teclado') {
 			
-			$replyMarkup = array(
-    'keyboard' => array(
-        array("A", "B")
-    ),
-	'one_time_keyboard' => true,
-	'request_location' => true
-);
-$encodedMarkup = json_encode($replyMarkup);
+			$keyboard = array('keyboard' => array(array("A", "B")));
+	
+	$encodedMarkup = json_encode($keyboard);
 
     	$response = $client->sendMessage([
         		'chat_id' => $update->message->chat->id,
@@ -140,6 +135,25 @@ $encodedMarkup = json_encode($replyMarkup);
     	$response = $client->sendPhoto([
         		'chat_id' => $update->message->chat->id,
 			'photo' => 'https://i.imgur.com/Jo1U31G.jpg'
+     			]);
+
+    }else if($update->message->text == '/tecla') {
+			
+			$keyboard = json_encode($keyboard = [
+                       'keyboard' => [
+                         ['Yes'],['No'],['Maybe'],
+                         ['1'],['2'],['3'],
+                       ] ,
+
+                       'resize_keyboard' => true,
+                       'one_time_keyboard' => true,
+                  'selective' => true
+                   ]),true);
+
+    	$response = $client->sendMessage([
+        		'chat_id' => $update->message->chat->id,
+				'reply_markup' => $encodedMarkup,
+			'text' => 'Test'
      			]);
 
     }
