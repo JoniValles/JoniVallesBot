@@ -70,10 +70,22 @@ try {
     		'text' => "Vamos Pablo sal a bailar que tu lo haces fenomenal tu cuerpo se mueve como una palmera suave, suave, su, su, suave"
     		]);
 
+    }else if($update->message->text == '/prueba') {
+
+			
+			$message = $this->getMessage();
+        $data = [
+            'chat_id' => $update->message->chat->id,
+            'latitude' => '37.7576793',
+            'longitude' => '-122.5076402',
+        ];
+ 
+        return Request::sendLocation($data);
+
     }
 	
 	
-	
+	 
 	
 	
 	else if($update->message->text == '/gym')
@@ -445,27 +457,18 @@ $conn->set_charset("utf8");
  $row = mysqli_fetch_array($result);
  $data = "";
  
-
-	if (empty($row)) {
-     $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
-    	$response = $client->sendMessage([
-    		'chat_id' => $update->message->chat->id,
-    		'text' => "No se han añadido misiones todavia."
-    		]);
-}else{
-	
-	while ($row = mysqli_fetch_array($result)) {
+while ($row = mysqli_fetch_array($result)) {
 		
 		$data = $data . "ID: " .$row['id']." - Recompensa: " . $row['Recompensa'] . " - Pokeparada: ". $row['Pokeparada'] . "\n";
     	
 
     }
+	
 	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
     		'text' => $data
     		]);
-	}
 	}
 	
 	
