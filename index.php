@@ -139,7 +139,7 @@ try {
 
     }else if($update->message->text == '/tecla') {
 			
-			$keyboard = json_encode($keyboard = [
+			$keyboard = [
                        'keyboard' => [
                          ['Yes'],['No'],['Maybe'],
                          ['1'],['2'],['3'],
@@ -148,7 +148,10 @@ try {
                        'resize_keyboard' => true,
                        'one_time_keyboard' => true,
                   'selective' => true
-                   ]),true);
+                   ];
+				   
+				   	$encodedMarkup = json_encode($keyboard);
+
 
     	$response = $client->sendMessage([
         		'chat_id' => $update->message->chat->id,
