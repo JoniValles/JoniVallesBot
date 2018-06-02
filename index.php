@@ -118,6 +118,22 @@ try {
      			]);
 
     }
+	else if($update->message->text == '/prueba') {
+			
+			$replyMarkup = array(
+    'keyboard' => array(
+        array("A", "B")
+    )
+);
+$encodedMarkup = json_encode($replyMarkup);
+
+    	$response = $client->sendMessage([
+        		'chat_id' => $update->message->chat->id,
+				'reply_markup' => $encodedMarkup,
+			'text' => 'Test'
+     			]);
+
+    }
 	
 	
 	 
