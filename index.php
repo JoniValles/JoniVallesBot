@@ -75,7 +75,7 @@ try {
     	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
-    		'text' => "Picky dimisión!!!!!"
+    		'text' => "Picky dimision!!!!!"
     		]);
 
     }else if($update->message->text == '/xavi') {
@@ -83,7 +83,7 @@ try {
     	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
-    		'text' => "Estás tardando en confirmar nidos"
+    		'text' => "Estas tardando en confirmar nidos"
     		]);
 
     }else if($update->message->text == '/yfoms') {
