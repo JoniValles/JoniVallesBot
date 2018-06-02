@@ -123,7 +123,9 @@ try {
 			$replyMarkup = array(
     'keyboard' => array(
         array("A", "B")
-    )
+    ),
+	'one_time_keyboard' => true,
+	'request_location' => true
 );
 $encodedMarkup = json_encode($replyMarkup);
 
@@ -131,6 +133,13 @@ $encodedMarkup = json_encode($replyMarkup);
         		'chat_id' => $update->message->chat->id,
 				'reply_markup' => $encodedMarkup,
 			'text' => 'Test'
+     			]);
+
+    }else if($update->message->text == '/prueba') {
+			
+    	$response = $client->sendPhoto([
+        		'chat_id' => $update->message->chat->id,
+			'photo' => 'https://i.imgur.com/Jo1U31G.jpg'
      			]);
 
     }
