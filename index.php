@@ -70,6 +70,38 @@ try {
     		'text' => "Vamos Pablo sal a bailar que tu lo haces fenomenal tu cuerpo se mueve como una palmera suave, suave, su, su, suave"
     		]);
 
+    }else if($update->message->text == '/picky') {
+			
+    	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+    	$response = $client->sendMessage([
+    		'chat_id' => $update->message->chat->id,
+    		'text' => "Picky dimisión!!!!!"
+    		]);
+
+    }else if($update->message->text == '/xavi') {
+			
+    	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+    	$response = $client->sendMessage([
+    		'chat_id' => $update->message->chat->id,
+    		'text' => "Estás tardando en confirmar nidos"
+    		]);
+
+    }else if($update->message->text == '/yfoms') {
+			
+    	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+    	$response = $client->sendMessage([
+    		'chat_id' => $update->message->chat->id,
+    		'text' => "Viva er Beti manque pierda!"
+    		]);
+
+    }else if($update->message->text == '/paola') {
+			
+    	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+    	$response = $client->sendMessage([
+    		'chat_id' => $update->message->chat->id,
+    		'text' => "Casual"
+    		]);
+
     }/*else if($update->message->text == '/prueba') {
 
 			
@@ -622,7 +654,7 @@ $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'a
 	
 	//BORRAR
 	
-	else if(substr($update->message->text, 0, 11) === "/borrartodo")
+	else if(substr($update->message->text, 0, 15) === "/borrartodotodo")
     {
 		
 		
@@ -926,7 +958,7 @@ $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'a
 	
 	//BORRAR
 	
-	else if(substr($update->message->text, 0, 12) === "//borrartodo")
+	else if(substr($update->message->text, 0, 16) === "//borrartodotodo")
     {
 		
 		
