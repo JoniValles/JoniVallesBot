@@ -510,7 +510,7 @@ $conn->set_charset("utf8");
  
 while ($row = mysqli_fetch_array($result)) {
 		
-		$data = $data . "<b>ID:</b> " .$row['id']." - <b>Recompensa:</b> " . $row['Recompensa'] . " - <b>Pokeparada:</b> ". $row['Pokeparada'] . "\n";
+		$data = $data . "**ID:** " .$row['id']." - **Recompensa:** " . $row['Recompensa'] . " - **Pokeparada:** ". $row['Pokeparada'] . "\n";
     	
 
     }
@@ -564,7 +564,7 @@ $conn->set_charset("utf8");
 	
 	while ($row = mysqli_fetch_array($result)) {
 		
-		$data = $data . "<b>ID:</b> " .$row['id']." - <b>Aerodactyl:</b> " . $row['Recompensa'] . " - <b>Pokeparada:</b> ". $row['Pokeparada'] . "\n";
+		$data = $data . "**ID:** " .$row['id']." - **Aerodactyl:** " . $row['Recompensa'] . " - **Pokeparada:** ". $row['Pokeparada'] . "\n";
     	
 
     }
