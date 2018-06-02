@@ -106,8 +106,14 @@ try {
 			
     	$response = $client->sendLocation([
         		'chat_id' => $update->message->chat->id,
-			'latitude' => 43.03434,
-			'longitude' => -5.03234
+			"reply_markup": {
+		"keyboard": [
+			[{
+				"text": "Send Location",
+				"request_location": true
+			}]
+		]
+	}
      			]);
 
     }
