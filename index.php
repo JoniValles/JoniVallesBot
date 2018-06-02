@@ -34,7 +34,7 @@ try {
     	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
     	$response = $client->sendMessage([
         	'chat_id' => $update->message->chat->id,
-        	'text' => "Ese Joni como mola se merece una oooooooola"
+        	'text' => "Ese Joni como mola se merece una ooooola"
      	]);
     }
     else if($update->message->text == '/rickroll')
@@ -70,10 +70,22 @@ try {
     		'text' => "Vamos Pablo sal a bailar que tu lo haces fenomenal tu cuerpo se mueve como una palmera suave, suave, su, su, suave"
     		]);
 
+    }else if($update->message->text == '/prueba') {
+
+			
+			$message = $this->getMessage();
+        $data = [
+            'chat_id' => $update->message->chat->id,
+            'latitude' => '37.7576793',
+            'longitude' => '-122.5076402',
+        ];
+ 
+        return Request::sendLocation($data);
+
     }
 	
 	
-	
+	 
 	
 	
 	else if($update->message->text == '/gym')
@@ -362,7 +374,7 @@ $conn->set_charset("utf8");
 	
 	//Misiones
 	
-	
+	/* MENSAJE MULTILINEA
 	
 	else if(substr($update->message->text, 0, 9 ) === "/misiones")
     {
@@ -406,7 +418,63 @@ while ($row = mysqli_fetch_array($result)) {
     		]);
 
     }
+	} */
+	
+	
+	
+	
+	else if(substr($update->message->text, 0, 9 ) === "/misiones")
+    {
+		
+		
+		 //connecting to database and getting the connection object
+//database constants
+ define('DB_HOST', 'den1.mysql2.gear.host');
+ define('DB_USER', 'pmgmisiones');
+ define('DB_PASS', "Mw78_Gz8-CJs");
+ define('DB_NAME', 'PMGMisiones');
+ 
+ //connecting to database and getting the connection object
+ $conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+$conn->set_charset("utf8");
+ if (mysqli_connect_errno()) {
+ echo "Failed to connect to MySQL: " . mysqli_connect_error();
+ $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+    	$response = $client->sendMessage([
+    		'chat_id' => $update->message->chat->id,
+    		'text' => ERROR
+    		]);
+ die();
+ }
+ 
+ 
+ $trainer = explode(" ", $update->message->text);
+ $query = "select * from mision;";
+
+ //executing the query 
+ mysqli_query($conn, $query) or die('Error querying database.');
+ $result = mysqli_query($conn, $query);
+ $row = mysqli_fetch_array($result);
+ $data = "";
+ 
+while ($row = mysqli_fetch_array($result)) {
+		
+		$data = $data . "ID: " .$row['id']." - Recompensa: " . $row['Recompensa'] . " - Pokeparada: ". $row['Pokeparada'] . "\n";
+    	
+
+    }
+	
+	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+    	$response = $client->sendMessage([
+    		'chat_id' => $update->message->chat->id,
+    		'text' => $data
+    		]);
 	}
+	
+	
+	
+	
+	
 	
 	
 	else if(substr($update->message->text, 0, 11 ) === "/aerodactyl")
@@ -441,16 +509,20 @@ $conn->set_charset("utf8");
  mysqli_query($conn, $query) or die('Error querying database.');
  $result = mysqli_query($conn, $query);
  $row = mysqli_fetch_array($result);
- 
-while ($row = mysqli_fetch_array($result)) {
+ $data = "";
+	
+	while ($row = mysqli_fetch_array($result)) {
 		
-    	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
-    	$response = $client->sendMessage([
-    		'chat_id' => $update->message->chat->id,
-    		'text' => "Aerodactyl - Pokeparada: ". $row['Pokeparada']
-    		]);
+		$data = $data . "ID: " .$row['id']." - Aerodactyl: " . $row['Recompensa'] . " - Pokeparada: ". $row['Pokeparada'] . "\n";
+    	
 
     }
+	
+	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+    	$response = $client->sendMessage([
+    		'chat_id' => $update->message->chat->id,
+    		'text' => $data
+    		]);
 	}
 	
 	//AÑADIR
