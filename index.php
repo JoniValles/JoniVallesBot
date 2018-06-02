@@ -102,18 +102,19 @@ try {
     		'text' => "Casual"
     		]);
 
-    }else if($update->message->text == '/prueba') {
+    }else if($update->message->text == '/location') {
 			
     	$response = $client->sendLocation([
         		'chat_id' => $update->message->chat->id,
-			"reply_markup": {
-		"keyboard": [
-			[{
-				"text": "Send Location",
-				"request_location": true
-			}]
-		]
-	}
+			'latitude' => 43.03434,
+			'longitude' => -5.03234
+     			]);
+
+    }else if($update->message->text == '/recompensas') {
+			
+    	$response = $client->sendPhoto([
+        		'chat_id' => $update->message->chat->id,
+			'photo' => 'https://i.imgur.com/Jo1U31G.jpg'
      			]);
 
     }
