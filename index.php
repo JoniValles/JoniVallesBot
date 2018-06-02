@@ -108,12 +108,13 @@ try {
     		]);
 
     }else if($update->message->text == '/prueba') {
-			
- $response = $telegram->getMe();
+$response = $client->sendPhoto([
+ 		'chat_id' => $update->message->chat->id,
+ 		'photo' => "AgADBAADoKoxGw6qoVMFy56u06YXwRg8qRkABKWgSQ0NLhp0dAEEAAEC"				
+     	]);
+]);
 
-$botId = $response->getId();
-$firstName = $response->getFirstName();
-$username = $response->getUsername();
+$messageId = $response->getMessageId();
 
     }
 	
