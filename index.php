@@ -18,7 +18,7 @@
 *
 */
 require 'vendor/autoload.php';
-
+use Telegram\Bot\Api;
 $client = new Zelenin\Telegram\Bot\Api('544381336:AAGnNEVqil8XIxMUyd61wSOUZVM3thxzTNQ'); // Set your access token
 $url = ''; // URL RSS feed
 $update = json_decode(file_get_contents('php://input'));
