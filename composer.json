@@ -1,7 +1,8 @@
 {
     "require": {
         "zelenin/telegram-bot-api": "~0.0",
-	"dg/rss-php": "^1.2"
+	"dg/rss-php": "^1.2",
+	"telegram-bot/api": "2.3.13"
 
     }
 }

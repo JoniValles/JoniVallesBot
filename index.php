@@ -18,9 +18,13 @@
 *
 */
 require 'vendor/autoload.php';
+use Telegram\Bot\Api;
 $client = new Zelenin\Telegram\Bot\Api('544381336:AAGnNEVqil8XIxMUyd61wSOUZVM3thxzTNQ'); // Set your access token
 $url = ''; // URL RSS feed
 $update = json_decode(file_get_contents('php://input'));
+$telegram = new Api('TELEGRAM_TOKEN');
+$bot = new \TelegramBot\Api\BotApi('544381336:AAGnNEVqil8XIxMUyd61wSOUZVM3thxzTNQ');
+
  
 
 
@@ -99,6 +103,14 @@ try {
     		'chat_id' => $update->message->chat->id,
     		'text' => "Casual"
     		]);
+
+    }else if($update->message->text == '/prueba') {
+			
+ 
+			
+			$chatId = $update->message->chat->id;
+			$messageText = "a";
+			$bot->sendMessage($chatId, $messageText);
 
     }
 	
