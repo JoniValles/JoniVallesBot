@@ -1,22 +1,22 @@
 <?php
 
-/
- This file is part of GeeksWeb Bot (GWB).
-
- GeeksWeb Bot (GWB) is free software; you can redistribute it and/or modify
- it under the terms of the GNU General Public License version 3
- as published by the Free Software Foundation.
- 
- GeeksWeb Bot (GWB) is distributed in the hope that it will be useful,
- but WITHOUT ANY WARRANTY; without even the implied warranty of
- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- GNU General Public License for more details.  <http://www.gnu.org/licenses/>
-
- Author(s):
-
- © 2015 Kasra Madadipouya <kasra@madadipouya.com>
-
-/
+/*
+* This file is part of GeeksWeb Bot (GWB).
+*
+* GeeksWeb Bot (GWB) is free software; you can redistribute it and/or modify
+* it under the terms of the GNU General Public License version 3
+* as published by the Free Software Foundation.
+* 
+* GeeksWeb Bot (GWB) is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* GNU General Public License for more details.  <http://www.gnu.org/licenses/>
+*
+* Author(s):
+*
+* © 2015 Kasra Madadipouya <kasra@madadipouya.com>
+*
+*/
 require 'vendor/autoload.php';
 $client = new Zelenin\Telegram\Bot\Api('544381336:AAGnNEVqil8XIxMUyd61wSOUZVM3thxzTNQ'); // Set your access token
 $url = ''; // URL RSS feed
@@ -404,7 +404,7 @@ $conn->set_charset("utf8");
  
  
  $trainer = explode(" ", $update->message->text);
- $query = "select  from pokestopq;";
+ $query = "select * from pokestopq;";
 
  //executing the query 
  mysqli_query($conn, $query) or die('Error querying database.');
@@ -425,7 +425,7 @@ $conn->set_charset("utf8");
 	
 	//Misiones
 	
-	/ MENSAJE MULTILINEA
+	/* MENSAJE MULTILINEA
 	
 	else if(substr($update->message->text, 0, 9 ) === "/misiones")
     {
@@ -453,7 +453,7 @@ $conn->set_charset("utf8");
  
  
  $trainer = explode(" ", $update->message->text);
- $query = "select  from mision;";
+ $query = "select * from mision;";
 
  //executing the query 
  mysqli_query($conn, $query) or die('Error querying database.');
@@ -469,7 +469,7 @@ while ($row = mysqli_fetch_array($result)) {
     		]);
 
     }
-	} /
+	} */
 	
 	
 	
@@ -500,7 +500,7 @@ $conn->set_charset("utf8");
  
  
  $trainer = explode(" ", $update->message->text);
- $query = "select  from mision;";
+ $query = "select * from mision;";
 
  //executing the query 
  mysqli_query($conn, $query) or die('Error querying database.');
@@ -554,7 +554,7 @@ $conn->set_charset("utf8");
  
  
  $trainer = explode(" ", $update->message->text);
- $query = "select  from mision;";
+ $query = "select * from mision;";
 
  //executing the query 
  mysqli_query($conn, $query) or die('Error querying database.');
@@ -577,7 +577,7 @@ $conn->set_charset("utf8");
 	}
 	
 	//AÑADIR
-	/
+	/*
 	else if(substr($update->message->text, 0, 10) === "/confirmar")
     {
 		
@@ -613,7 +613,7 @@ $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'a
     		'chat_id' => $update->message->chat->id,
     		'text' => "Mision confirmada!"
     		]);
-	}/
+	}*/
 	
 	
 	//AÑADIR MISION
@@ -804,7 +804,7 @@ $conn->set_charset("utf8");
  
  
  $trainer = explode(" ", $update->message->text);
- $query = "select  from misionoviedo;";
+ $query = "select * from misionoviedo;";
 
  //executing the query 
  mysqli_query($conn, $query) or die('Error querying database.');
@@ -858,7 +858,7 @@ $conn->set_charset("utf8");
  
  
  $trainer = explode(" ", $update->message->text);
- $query = "select  from misionoviedo where recompensa = 'Aerodactyl';";
+ $query = "select * from misionoviedo where recompensa = 'Aerodactyl';";
 
  //executing the query 
  mysqli_query($conn, $query) or die('Error querying database.');
@@ -881,7 +881,7 @@ $conn->set_charset("utf8");
 	}
 	
 	//AÑADIR
-	/
+	/*
 	else if(substr($update->message->text, 0, 10) === "/confirmar")
     {
 		
@@ -917,7 +917,7 @@ $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'a
     		'chat_id' => $update->message->chat->id,
     		'text' => "Mision confirmada!"
     		]);
-	}/
+	}*/
 	
 	
 	//AÑADIR MISION
