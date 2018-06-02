@@ -457,12 +457,13 @@ while ($row = mysqli_fetch_array($result)) {
     		'chat_id' => $update->message->chat->id,
     		'text' => "No se han añadido misiones todavia."
     		]);
-}
+}else{
 	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
     		'text' => $data
     		]);
+	}
 	}
 	
 	
