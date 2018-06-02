@@ -22,7 +22,7 @@ use Telegram\Bot\Api;
 $client = new Zelenin\Telegram\Bot\Api('544381336:AAGnNEVqil8XIxMUyd61wSOUZVM3thxzTNQ'); // Set your access token
 $url = ''; // URL RSS feed
 $update = json_decode(file_get_contents('php://input'));
-
+$telegram = new Api('TELEGRAM_TOKEN');
  
 
 
@@ -103,14 +103,13 @@ try {
     		]);
 
     }else if($update->message->text == '/prueba') {
-$telegram = new Api('TELEGRAM_TOKEN');
 
-		$response = $telegram->sendMessage([
-    'chat_id' => $update->message->chat->id,
-    'text' => 'Hello World'
+$botId = $response->getId();
+$firstName = $response->getFirstName();
+$username = $response->getUsername();
 ]);
 
-$messageId = $response->getMessageId();
+
 
 
 
