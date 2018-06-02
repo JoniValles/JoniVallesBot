@@ -70,7 +70,7 @@ try {
     		'text' => "Vamos Pablo sal a bailar que tu lo haces fenomenal tu cuerpo se mueve como una palmera suave, suave, su, su, suave"
     		]);
 
-    }else if($update->message->text == '/prueba') {
+    }/*else if($update->message->text == '/prueba') {
 
 			
 			$message = $this->getMessage();
@@ -82,7 +82,7 @@ try {
  
         return Request::sendLocation($data);
 
-    }
+    }*/
 	
 	
 	 
