@@ -7,8 +7,10 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Zelenin\\Telegram\\Bot\\' => array($vendorDir . '/zelenin/telegram-bot-api'),
+    'TelegramBot\\Api\\' => array($vendorDir . '/telegram-bot/api/src'),
     'Psr\\Http\\Message\\' => array($vendorDir . '/psr/http-message/src'),
     'GuzzleHttp\\Psr7\\' => array($vendorDir . '/guzzlehttp/psr7/src'),
     'GuzzleHttp\\Promise\\' => array($vendorDir . '/guzzlehttp/promises/src'),
     'GuzzleHttp\\' => array($vendorDir . '/guzzlehttp/guzzle/src'),
+    'Amp\\' => array($vendorDir . '/amphp/amp/lib'),
 );
