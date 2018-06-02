@@ -104,9 +104,10 @@ try {
 
     }else if($update->message->text == '/prueba') {
 			
-    	$response = $client->sendDocument([
+    	$response = $client->sendLocation([
         		'chat_id' => $update->message->chat->id,
-			'document' => "http://i.giphy.com/13IC4LVeP5NGNi.gif"
+			'latitude' => 43.03434,
+			'longitude' => -5.03234
      			]);
 
     }
