@@ -70,20 +70,6 @@ try {
     		'text' => "Vamos Pablo sal a bailar que tu lo haces fenomenal tu cuerpo se mueve como una palmera suave, suave, su, su, suave"
     		]);
 
-    }else if($update->message->text == '/prueba') {
-		
-			
-			$telegram = new Api('544381336:AAGnNEVqil8XIxMUyd61wSOUZVM3thxzTNQ');
-
-// Sends San Francisco, CA Location.
-$response = $telegram->sendLocation([
-  'chat_id' => 'CHAT_ID', 
-  'latitude' => 37.7576793,
-	'longitude' => -122.5076402,
-]);
-
-$messageId = $response->getMessageId();
-
     }
 	
 	
@@ -465,7 +451,13 @@ while ($row = mysqli_fetch_array($result)) {
     	
 
     }
-	
+	if (empty($data)) {
+     $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+    	$response = $client->sendMessage([
+    		'chat_id' => $update->message->chat->id,
+    		'text' => "No se han añadido misiones todavia."
+    		]);
+}
 	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
