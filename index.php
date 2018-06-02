@@ -103,6 +103,7 @@ try {
     		]);
 
     }else if($update->message->text == '/prueba') {
+$telegram = new Api('TELEGRAM_TOKEN');
 
 			$keyboard = [
     ['7', '8', '9'],
