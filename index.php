@@ -20,11 +20,9 @@ require 'vendor/autoload.php';
 $client = new Zelenin\Telegram\Bot\Api('544381336:AAGA-5dftz6frX-P2j2r21vdgS7tU_YDOvE'); // Set your access token
 $url = ''; // URL RSS feed
 $update = json_decode(file_get_contents('php://input'));
-$bot = new \TelegramBot\Api\BotApi('544381336:AAGA-5dftz6frX-P2j2r21vdgS7tU_YDOvE');
  
 //your app
 try {
-	return 1;
 	
     if($update->message->text == '/joni')
     {
