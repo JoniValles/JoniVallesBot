@@ -1,1 +1,4 @@
-<?php http_response_code(200); echo "{}"; ?>
+<?php 
+var_dump(http_response_code());
+http_response_code(200); 
+ ?>
