@@ -23,7 +23,7 @@ $update = json_decode(file_get_contents('php://input'));
  
 //your app
 try {
-	
+	http_response_code(200);
     if($update->message->text == '/joni')
     {
     	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
@@ -1142,6 +1142,7 @@ $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'a
 	   http_response_code(200);
 	   }
 } catch (\Zelenin\Telegram\Bot\NotOkException $e) {
+	http_response_code(200);
     //echo error message ot log it
     echo $e->getMessage();
 	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
