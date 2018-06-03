@@ -17,7 +17,7 @@
 *
 */
 require 'vendor/autoload.php';
-$client = new Zelenin\Telegram\Bot\Api('544381336:AAGA-5dftz6frX-P2j2r21vdgS7tU_YDOvE'); // Set your access token
+$client = new Zelenin\Telegram\Bot\Api('544381336:AAGq_Z9pdknzO_q9n6ZVlID-2SWMB4HS9I4'); // Set your access token
 $url = ''; // URL RSS feed
 $update = json_decode(file_get_contents('php://input'));
  
