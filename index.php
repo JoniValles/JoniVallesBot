@@ -115,7 +115,10 @@ try {
      			]);
     }*/else if($update->message->text == '/prueba') {
 			
-    	$result = Request::sendMessage(['chat_id' => $chat_id, 'text' => 'Your utf8 text ?? ...']);
+    	$response = $client->sendPhoto([
+        		'chat_id' => $update->message->chat->id,
+			'photo' => 'https://i.imgur.com/Jo1U31G.jpg'
+     			]);
     }else if($update->message->text == '/tecla') {
 			
 			$keyboard = [
