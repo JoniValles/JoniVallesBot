@@ -9,8 +9,8 @@ class ComposerStaticInit95419506929a0927fedda1e6652c31ff
     public static $files = array (
         'c964ee0ededf28c96ebd9db5099ef910' => __DIR__ . '/..' . '/guzzlehttp/promises/src/functions_include.php',
         'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
-        '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
         'e8aa6e4b5a1db2f56ae794f1505391a8' => __DIR__ . '/..' . '/amphp/amp/lib/functions.php',
+        '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -20,16 +20,7 @@ class ComposerStaticInit95419506929a0927fedda1e6652c31ff
         ),
         'P' => 
         array (
-            'Psr\\Log\\' => 8,
             'Psr\\Http\\Message\\' => 17,
-        ),
-        'M' => 
-        array (
-            'Monolog\\' => 8,
-        ),
-        'L' => 
-        array (
-            'Longman\\TelegramBot\\' => 20,
         ),
         'G' => 
         array (
@@ -48,21 +39,9 @@ class ComposerStaticInit95419506929a0927fedda1e6652c31ff
         array (
             0 => __DIR__ . '/..' . '/zelenin/telegram-bot-api',
         ),
-        'Psr\\Log\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/psr/log/Psr/Log',
-        ),
         'Psr\\Http\\Message\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/http-message/src',
-        ),
-        'Monolog\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
-        ),
-        'Longman\\TelegramBot\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/longman/telegram-bot/src',
         ),
         'GuzzleHttp\\Psr7\\' => 
         array (
