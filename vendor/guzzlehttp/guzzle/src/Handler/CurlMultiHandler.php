@@ -65,9 +65,7 @@ class CurlMultiHandler
 
         $promise = new Promise(
             [$this, 'execute'],
-            function () use ($id) {
-                return $this->cancel($id);
-            }
+            function () use ($id) { return $this->cancel($id); }
         );
 
         $this->addRequest(['easy' => $easy, 'deferred' => $promise]);
@@ -194,6 +192,6 @@ class CurlMultiHandler
             }
         }
 
-        return max(0, $nextTime - $currentTime) * 1000000;
+        return max(0, $currentTime - $nextTime);
     }
 }
