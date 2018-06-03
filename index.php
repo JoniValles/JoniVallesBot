@@ -1,5 +1,4 @@
 <?php
-
 /*
 * This file is part of GeeksWeb Bot (GWB).
 *
@@ -18,23 +17,19 @@
 *
 */
 require 'vendor/autoload.php';
-$client = new Zelenin\Telegram\Bot\Api('544381336:AAH_gAsgfCY6EzSlULTRi0cJJIUhlmWsB9Y'); // Set your access token
+$client = new Zelenin\Telegram\Bot\Api('544381336:AAGnNEVqil8XIxMUyd61wSOUZVM3thxzTNQ'); // Set your access token
 $url = ''; // URL RSS feed
 $update = json_decode(file_get_contents('php://input'));
-//$bot = new \TelegramBot\Api\BotApi('544381336:AAH_gAsgfCY6EzSlULTRi0cJJIUhlmWsB9Y');//
-
+$bot = new \TelegramBot\Api\BotApi('544381336:AAGnNEVqil8XIxMUyd61wSOUZVM3thxzTNQ');
  
-
-
 //your app
 try {
-
     if($update->message->text == '/joni')
     {
     	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
     	$response = $client->sendMessage([
         	'chat_id' => $update->message->chat->id,
-        	'text' => "Ese Joni como mola se merece una ooola"
+        	'text' => "Ese Joni como mola se merece una oola"
      	]);
     }
     else if($update->message->text == '/rickroll')
@@ -45,7 +40,6 @@ try {
     		'chat_id' => $update->message->chat->id,
     		'text' => "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
     		]);
-
     }else if($update->message->text == '/belen') {
 			
     	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
@@ -53,7 +47,6 @@ try {
     		'chat_id' => $update->message->chat->id,
     		'text' => "Casuaaaaal"
     		]);
-
     }else if($update->message->text == '/tomberi') {
 			
     	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
@@ -61,7 +54,6 @@ try {
     		'chat_id' => $update->message->chat->id,
     		'text' => "https://media.giphy.com/media/l49K0DUalMrMwE9qg/giphy.gif"
     		]);
-
     }else if($update->message->text == '/pablo') {
 			
     	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
@@ -69,7 +61,6 @@ try {
     		'chat_id' => $update->message->chat->id,
     		'text' => "Vamos Pablo sal a bailar que tu lo haces fenomenal tu cuerpo se mueve como una palmera suave, suave, su, su, suave"
     		]);
-
     }else if($update->message->text == '/picky') {
 			
     	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
@@ -77,7 +68,6 @@ try {
     		'chat_id' => $update->message->chat->id,
     		'text' => "Picky dimision!!!!!"
     		]);
-
     }else if($update->message->text == '/xavi') {
 			
     	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
@@ -85,7 +75,6 @@ try {
     		'chat_id' => $update->message->chat->id,
     		'text' => "Estas tardando en confirmar nidos"
     		]);
-
     }else if($update->message->text == '/yfoms') {
 			
     	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
@@ -93,7 +82,6 @@ try {
     		'chat_id' => $update->message->chat->id,
     		'text' => "Viva er Beti manque pierda!"
     		]);
-
     }else if($update->message->text == '/paola') {
 			
     	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
@@ -101,7 +89,6 @@ try {
     		'chat_id' => $update->message->chat->id,
     		'text' => "Casual"
     		]);
-
     }else if($update->message->text == '/location') {
 			
     	$response = $client->sendLocation([
@@ -109,56 +96,47 @@ try {
 			'latitude' => 43.03434,
 			'longitude' => -5.03234
      			]);
-
     }else if($update->message->text == '/recompensas') {
 			
     	$response = $client->sendPhoto([
         		'chat_id' => $update->message->chat->id,
 			'photo' => 'https://i.imgur.com/Jo1U31G.jpg'
      			]);
-
     }
 	/*else if($update->message->text == '/teclado') {
 			
 			$keyboard = array('keyboard' => array(array("A", "B")));
 	
 	$encodedMarkup = json_encode($keyboard);
-
     	$response = $client->sendMessage([
         		'chat_id' => $update->message->chat->id,
 				'reply_markup' => $encodedMarkup,
 			'text' => 'Test'
      			]);
-
     }*/else if($update->message->text == '/prueba') {
 			
     	$response = $client->sendPhoto([
         		'chat_id' => $update->message->chat->id,
 			'photo' => 'https://i.imgur.com/Jo1U31G.jpg'
      			]);
-
     }else if($update->message->text == '/tecla') {
 			
 			$keyboard = [
                        'keyboard' => [
                          ['Yes'],['No'],['Maybe'],
-                         ['1'],['2'],['3'],
+                         ['1'],['2'],['3'],['3'],['3'],['3'],['3'],['3'],['3'],['3'],['3'],['3'],['3'],['3'],['3'],['3'],['3'],['3'],['3'],['3'],['3'],['3'],['3'],['3'],['3'],['3'],['3'],['3'],['3'],['3'],['3'],['3'],['3'],['3'],['3'],['3'],['3'],['3'],['3'],['3'],['3'],['3'],['3'],['3'],['3'],['3'],['3'],['3'],['3'],['3'],['3'],['3'],['3'],['3'],
                        ] ,
-
                        'resize_keyboard' => true,
                        'one_time_keyboard' => true,
                   'selective' => true
                    ];
 				   
 				   	$encodedMarkup = json_encode($keyboard);
-
-
     	$response = $client->sendMessage([
         		'chat_id' => $update->message->chat->id,
 				'reply_markup' => $encodedMarkup,
 			'text' => 'Test'
      			]);
-
     }
 	
 	
@@ -168,7 +146,6 @@ try {
 	else if($update->message->text == '/gym')
     {
  $query = "select slots_available, name,url,cp,trainer_name,latitude,longitude,pokemon_id,team_id,iv_attack,iv_defense,iv_stamina,total_cp from gym inner join gymmember on gym.gym_id = gymmember.gym_id inner join gymdetails on gym.gym_id = gymdetails.gym_id inner join gympokemon on gymmember.pokemon_uid=gympokemon.pokemon_uid where trainer_name = 'CristinaBugallo' and gym.last_scanned > now() - interval 24 hour order by slots_available desc;";
-
  //executing the query 
  mysqli_query($conn, $query) or die('Error querying database.');
  $result = mysqli_query($conn, $query);
@@ -179,7 +156,6 @@ try {
     		'chat_id' => $update->message->chat->id,
     		'text' => $row['trainer_name']
     		]);
-
     }
 	
 	
@@ -205,7 +181,6 @@ $conn->set_charset("utf8");
  
  $trainer = explode(" ", $update->message->text);
  $query = "select slots_available, name,url,cp,trainer_name,latitude,longitude,pokemon_id,team_id,iv_attack,iv_defense,iv_stamina,total_cp from gym inner join gymmember on gym.gym_id = gymmember.gym_id inner join gymdetails on gym.gym_id = gymdetails.gym_id inner join gympokemon on gymmember.pokemon_uid=gympokemon.pokemon_uid where trainer_name = '$trainer[1]' and gym.last_scanned > now() - interval 24 hour order by slots_available desc;";
-
  //executing the query 
  mysqli_query($conn, $query) or die('Error querying database.');
  $result = mysqli_query($conn, $query);
@@ -218,7 +193,6 @@ $conn->set_charset("utf8");
     		'chat_id' => $update->message->chat->id,
     		'text' => $row['trainer_name'] . " - Gimnasio: " . $row['name'] . " - Huecos disponibles: ". $row['slots_available']
     		]);
-
     }
 	}
 	
@@ -249,7 +223,6 @@ $conn->set_charset("utf8");
  
  
  $query = "select slots_available, name,url,cp,trainer_name,latitude,longitude,pokemon_id,team_id,iv_attack,iv_defense,iv_stamina,total_cp from gym inner join gymmember on gym.gym_id = gymmember.gym_id inner join gymdetails on gym.gym_id = gymdetails.gym_id inner join gympokemon on gymmember.pokemon_uid=gympokemon.pokemon_uid where gym.last_scanned > now() - interval 24 hour and team_id = 1 and slots_available > 0  group by name order by slots_available desc;";
-
  //executing the query 
  mysqli_query($conn, $query) or die('Error querying database.');
  $result = mysqli_query($conn, $query);
@@ -262,7 +235,6 @@ $conn->set_charset("utf8");
     		'chat_id' => $update->message->chat->id,
     		'text' => "Gimnasio: " . $row['name'] . " - Huecos disponibles: ". $row['slots_available']
     		]);
-
     }
 	}
 	
@@ -290,7 +262,6 @@ $conn->set_charset("utf8");
  
  $trainer = explode(" ", $update->message->text);
  $query = "select slots_available, name,url,cp,trainer_name,latitude,longitude,pokemon_id,team_id,iv_attack,iv_defense,iv_stamina,total_cp from gym inner join gymmember on gym.gym_id = gymmember.gym_id inner join gymdetails on gym.gym_id = gymdetails.gym_id inner join gympokemon on gymmember.pokemon_uid=gympokemon.pokemon_uid where trainer_name = '$trainer[1]' and gym.last_scanned > now() - interval 24 hour order by slots_available desc;";
-
  //executing the query 
  mysqli_query($conn, $query) or die('Error querying database.');
  $result = mysqli_query($conn, $query);
@@ -303,7 +274,6 @@ $conn->set_charset("utf8");
     		'chat_id' => $update->message->chat->id,
     		'text' => $row['trainer_name'] . " - Gimnasio: " . $row['name'] . " - Huecos disponibles: ". $row['slots_available']
     		]);
-
     }
 	}
 	
@@ -335,7 +305,6 @@ $conn->set_charset("utf8");
  
  //$trainer = explode(" ", $update->message->text);
  $query = "select name,level,spawn,start,end from raid inner join gymdetails on raid.gym_id = gymdetails.gym_id inner join gym on raid.gym_id = gym.gym_id where raid.end > now() - interval 1 hour order by end asc;";
-
  //executing the query 
  mysqli_query($conn, $query) or die('Error querying database.');
  $result = mysqli_query($conn, $query);
@@ -348,7 +317,6 @@ $conn->set_charset("utf8");
     		'chat_id' => $update->message->chat->id,
     		'text' => " Gimnasio: " . $row['name'] . " - Huecos disponibles: ". $row['level']
     		]);
-
     }
 	}
 	
@@ -384,19 +352,16 @@ $conn->set_charset("utf8");
  
  $trainer = explode(" ", $update->message->text);
  $query = "select latitude,longitude,disappear_time from pokemon where pokemon_id = 16 limit 1;";
-
  //executing the query 
  mysqli_query($conn, $query) or die('Error querying database.');
  $result = mysqli_query($conn, $query);
  $row = mysqli_fetch_array($result);
  
-
     	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
     		'text' => Pidgey
     		]);
-
     
 	}
 	
@@ -431,19 +396,16 @@ $conn->set_charset("utf8");
  
  $trainer = explode(" ", $update->message->text);
  $query = "select * from pokestopq;";
-
  //executing the query 
  mysqli_query($conn, $query) or die('Error querying database.');
  $result = mysqli_query($conn, $query);
  $row = mysqli_fetch_array($result);
  
-
     	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
     		'text' => Pidgey
     		]);
-
     
 	}
 	
@@ -480,7 +442,6 @@ $conn->set_charset("utf8");
  
  $trainer = explode(" ", $update->message->text);
  $query = "select * from mision;";
-
  //executing the query 
  mysqli_query($conn, $query) or die('Error querying database.');
  $result = mysqli_query($conn, $query);
@@ -493,7 +454,6 @@ while ($row = mysqli_fetch_array($result)) {
     		'chat_id' => $update->message->chat->id,
     		'text' => "ID: " .$row['id']." - Recompensa: " . $row['Recompensa'] . " - Pokeparada: ". $row['Pokeparada']
     		]);
-
     }
 	} */
 	
@@ -527,7 +487,6 @@ $conn->set_charset("utf8");
  
  $trainer = explode(" ", $update->message->text);
  $query = "select * from mision;";
-
  //executing the query 
  mysqli_query($conn, $query) or die('Error querying database.');
  $result = mysqli_query($conn, $query);
@@ -538,7 +497,6 @@ while ($row = mysqli_fetch_array($result)) {
 		
 		$data = $data . "<b>ID:</b> " .$row['id']." - <b>Recompensa:</b> " . $row['Recompensa'] . " -<b> Pokeparada:</b> ". $row['Pokeparada'] . "\n";
     	
-
     }
 	
 	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
@@ -576,7 +534,6 @@ $conn->set_charset("utf8");
  
  $trainer = explode(" ", $update->message->text);
  $query = "select * from mision;";
-
  //executing the query 
  mysqli_query($conn, $query) or die('Error querying database.');
  $result = mysqli_query($conn, $query);
@@ -587,7 +544,6 @@ while ($row = mysqli_fetch_array($result)) {
 		
 		$data = $data . "<b>ID:</b> " .$row['id']." - <b>Recompensa:</b> " . $row['Recompensa'] . " -<b> Pokeparada:</b> ". $row['Pokeparada'] . "\n";
     	
-
     }
 	
 	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
@@ -602,7 +558,6 @@ while ($row = mysqli_fetch_array($result)) {
 	
 	
 	
-
 	
 	
 	
@@ -646,7 +601,6 @@ while ($row = mysqli_fetch_array($result)) {
 	
 	
 	
-
 	
 	
 	
@@ -678,7 +632,6 @@ $conn->set_charset("utf8");
  
  $trainer = explode(" ", $update->message->text);
  $query = "select * from mision;";
-
  //executing the query 
  mysqli_query($conn, $query) or die('Error querying database.');
  $result = mysqli_query($conn, $query);
@@ -689,7 +642,6 @@ $conn->set_charset("utf8");
 		
 		$data = $data . "ID: " .$row['id']." - Aerodactyl: " . $row['Recompensa'] . " - Pokeparada: ". $row['Pokeparada'] . "\n";
     	
-
     }
 	
 	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
@@ -728,7 +680,6 @@ $conn->set_charset("utf8");
  
  $trainer = explode(" ", $update->message->text);
  $query = "insert into mision (Recompensa, Pokeparada) values ('$trainer[1]','$trainer[2]')";
-
  //executing the query 
  mysqli_query($conn, $query) or die('Error querying database.');
 $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
@@ -772,10 +723,8 @@ $conn->set_charset("utf8");
  unset($data[0]);
  unset($data[1]);
  $finalData = implode(" ", $data);
-
  
  $query = "insert into mision (Recompensa, Pokeparada) values ('$trainer[1]','$finalData')";
-
  //executing the query 
  mysqli_query($conn, $query) or die('Error querying database.');
 $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
@@ -819,9 +768,7 @@ $conn->set_charset("utf8");
     		]);
  die();
  }
-
  $query = "DELETE FROM mision;";
-
  //executing the query 
  mysqli_query($conn, $query) or die('Error querying database.');
 $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
@@ -857,9 +804,7 @@ $conn->set_charset("utf8");
  
  
  $id = explode(" ", $update->message->text);
-
  $query = "delete from mision where id = $id[1] ";
-
  //executing the query 
  mysqli_query($conn, $query) or die('Error querying database.');
 $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
@@ -928,7 +873,6 @@ $conn->set_charset("utf8");
  
  $trainer = explode(" ", $update->message->text);
  $query = "select * from misionoviedo;";
-
  //executing the query 
  mysqli_query($conn, $query) or die('Error querying database.');
  $result = mysqli_query($conn, $query);
@@ -939,7 +883,6 @@ while ($row = mysqli_fetch_array($result)) {
 		
 		$data = $data . "ID: " .$row['id']." - Recompensa: " . $row['Recompensa'] . " - Pokeparada: ". $row['Pokeparada'] . "\n";
     	
-
     }
 	
 	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
@@ -982,7 +925,6 @@ $conn->set_charset("utf8");
  
  $trainer = explode(" ", $update->message->text);
  $query = "select * from misionoviedo where recompensa = 'Aerodactyl';";
-
  //executing the query 
  mysqli_query($conn, $query) or die('Error querying database.');
  $result = mysqli_query($conn, $query);
@@ -993,7 +935,6 @@ $conn->set_charset("utf8");
 		
 		$data = $data . "ID: " .$row['id']." - Aerodactyl: " . $row['Recompensa'] . " - Pokeparada: ". $row['Pokeparada'] . "\n";
     	
-
     }
 	
 	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
@@ -1032,7 +973,6 @@ $conn->set_charset("utf8");
  
  $trainer = explode(" ", $update->message->text);
  $query = "insert into mision (Recompensa, Pokeparada) values ('$trainer[1]','$trainer[2]')";
-
  //executing the query 
  mysqli_query($conn, $query) or die('Error querying database.');
 $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
@@ -1076,10 +1016,8 @@ $conn->set_charset("utf8");
  unset($data[0]);
  unset($data[1]);
  $finalData = implode(" ", $data);
-
  
  $query = "insert into misionoviedo (Recompensa, Pokeparada) values ('$trainer[1]','$finalData')";
-
  //executing the query 
  mysqli_query($conn, $query) or die('Error querying database.');
 $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
@@ -1123,9 +1061,7 @@ $conn->set_charset("utf8");
     		]);
  die();
  }
-
  $query = "DELETE FROM misionoviedo;";
-
  //executing the query 
  mysqli_query($conn, $query) or die('Error querying database.');
 $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
@@ -1161,9 +1097,7 @@ $conn->set_charset("utf8");
  
  
  $id = explode(" ", $update->message->text);
-
  $query = "delete from misionoviedo where id = $id[1] ";
-
  //executing the query 
  mysqli_query($conn, $query) or die('Error querying database.');
 $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
@@ -1182,7 +1116,6 @@ $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'a
 	
 	
 	
-
 	
 	
 	
@@ -1204,13 +1137,10 @@ $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'a
 					'chat_id' => $update->message->chat->id,
 					'text' => $message
 				]);
-
     }
    else{
 	   }
-
 } catch (\Zelenin\Telegram\Bot\NotOkException $e) {
-
     //echo error message ot log it
     echo $e->getMessage();
 	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
@@ -1218,5 +1148,4 @@ $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'a
     		'chat_id' => $update->message->chat->id,
     		'text' => $e
     		]);
-
 }
