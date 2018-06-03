@@ -34,7 +34,7 @@ try {
     	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
     	$response = $client->sendMessage([
         	'chat_id' => $update->message->chat->id,
-        	'text' => "Ese Joni como mola se merece una oola"
+        	'text' => "Ese Joni como mola se merece una ooola"
      	]);
     }
     else if($update->message->text == '/rickroll')
@@ -142,7 +142,7 @@ try {
 			$keyboard = [
                        'keyboard' => [
                          ['Yes'],['No'],['Maybe'],
-                         ['1'],['2'],['3'],['3'],['3'],['3'],['3'],['3'],['3'],['3'],['3'],['3'],['3'],['3'],['3'],['3'],['3'],['3'],['3'],['3'],['3'],['3'],['3'],['3'],['3'],['3'],['3'],['3'],['3'],['3'],['3'],['3'],['3'],['3'],['3'],['3'],['3'],['3'],['3'],['3'],['3'],['3'],['3'],['3'],['3'],['3'],['3'],['3'],['3'],['3'],['3'],['3'],['3'],['3'],
+                         ['1'],['2'],['3'],
                        ] ,
 
                        'resize_keyboard' => true,
