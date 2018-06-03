@@ -24,7 +24,20 @@ $url = ''; // URL RSS feed
 $update = json_decode(file_get_contents('php://input'));
 
  
-
+ //connecting to database and getting the connection object
+//database constants
+ define('DB_HOST', '83.97.217.51');
+ define('DB_USER', 'jonivalles');
+ define('DB_PASS', "jvr123");
+ define('DB_NAME', 'PMGOviedo0401');
+ 
+ //connecting to database and getting the connection object
+ $conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+$conn->set_charset("utf8");
+ if (mysqli_connect_errno()) {
+ echo "Failed to connect to MySQL: " . mysqli_connect_error();
+ die();
+ }
 
 //your app
 try {
@@ -46,36 +59,7 @@ try {
     		'text' => "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
     		]);
 
-    }else if($update->message->text == '/belen') {
-			
-    	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
-    	$response = $client->sendMessage([
-    		'chat_id' => $update->message->chat->id,
-    		'text' => "Casuaaaaal"
-    		]);
-
-    }else if($update->message->text == '/tomberi') {
-			
-    	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
-    	$response = $client->sendMessage([
-    		'chat_id' => $update->message->chat->id,
-    		'text' => "https://media.giphy.com/media/l49K0DUalMrMwE9qg/giphy.gif"
-    		]);
-
-    }else if($update->message->text == '/pablo') {
-			
-    	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
-    	$response = $client->sendMessage([
-    		'chat_id' => $update->message->chat->id,
-    		'text' => "Vamos Pablo sal a bailar que tu lo haces fenomenal tu cuerpo se mueve como una palmera suave, suave, su, su, suave"
-    		]);
-
     }
-	
-	
-	
-	
-	
 	else if($update->message->text == '/gym')
     {
  $query = "select slots_available, name,url,cp,trainer_name,latitude,longitude,pokemon_id,team_id,iv_attack,iv_defense,iv_stamina,total_cp from gym inner join gymmember on gym.gym_id = gymmember.gym_id inner join gymdetails on gym.gym_id = gymdetails.gym_id inner join gympokemon on gymmember.pokemon_uid=gympokemon.pokemon_uid where trainer_name = 'CristinaBugallo' and gym.last_scanned > now() - interval 24 hour order by slots_available desc;";
@@ -94,26 +78,8 @@ try {
     }
 	
 	
-	else if(substr($update->message->text, 0, 11 ) === "/gymoviedo ")
+	else if(substr($update->message->text, 0, 5 ) === "/gym ")
     {
-		
-		
-		 //connecting to database and getting the connection object
-//database constants
- define('DB_HOST', '83.97.217.51');
- define('DB_USER', 'jonivalles');
- define('DB_PASS', "jvr123");
- define('DB_NAME', 'PMGOviedo0401');
- 
- //connecting to database and getting the connection object
- $conn = new mysqli('83.97.217.51', DB_USER, DB_PASS, DB_NAME);
-$conn->set_charset("utf8");
- if (mysqli_connect_errno()) {
- echo "Failed to connect to MySQL: " . mysqli_connect_error();
- die();
- }
- 
- 
  $trainer = explode(" ", $update->message->text);
  $query = "select slots_available, name,url,cp,trainer_name,latitude,longitude,pokemon_id,team_id,iv_attack,iv_defense,iv_stamina,total_cp from gym inner join gymmember on gym.gym_id = gymmember.gym_id inner join gymdetails on gym.gym_id = gymdetails.gym_id inner join gympokemon on gymmember.pokemon_uid=gympokemon.pokemon_uid where trainer_name = '$trainer[1]' and gym.last_scanned > now() - interval 24 hour order by slots_available desc;";
 
@@ -131,33 +97,14 @@ $conn->set_charset("utf8");
     		]);
 
     }
-	}
 	
 	
 	
-	
-	else if(substr($update->message->text, 0, 10 ) === "/gymgijon ")
+	/*
+	else if(substr($update->message->text, 0, 10 ) === "/gymcount ")
     {
-		
-		
-		 //connecting to database and getting the connection object
-//database constants
- define('DB_HOST', '83.97.217.51');
- define('DB_USER', 'jonivalles');
- define('DB_PASS', "jvr123");
- define('DB_NAME', 'PMGGijon1701');
- 
- //connecting to database and getting the connection object
- $conn = new mysqli('83.97.217.51', DB_USER, DB_PASS, DB_NAME);
-$conn->set_charset("utf8");
- if (mysqli_connect_errno()) {
- echo "Failed to connect to MySQL: " . mysqli_connect_error();
- die();
- }
- 
- 
  $trainer = explode(" ", $update->message->text);
- $query = "select slots_available, name,url,cp,trainer_name,latitude,longitude,pokemon_id,team_id,iv_attack,iv_defense,iv_stamina,total_cp from gym inner join gymmember on gym.gym_id = gymmember.gym_id inner join gymdetails on gym.gym_id = gymdetails.gym_id inner join gympokemon on gymmember.pokemon_uid=gympokemon.pokemon_uid where trainer_name = '$trainer[1]' and gym.last_scanned > now() - interval 24 hour order by slots_available desc;";
+ $query = "select count(name) from gym inner join gymmember on gym.gym_id = gymmember.gym_id inner join gymdetails on gym.gym_id = gymdetails.gym_id inner join gympokemon on gymmember.pokemon_uid=gympokemon.pokemon_uid where trainer_name = '$trainer[1]' and gym.last_scanned > now() - interval 24 hour order by slots_available desc;";
 
  //executing the query 
  mysqli_query($conn, $query) or die('Error querying database.');
@@ -173,7 +120,13 @@ $conn->set_charset("utf8");
     		]);
 
     }
+	
 	}
+	*/
+	
+	
+	
+	
 	
 	
 	
