@@ -41,6 +41,8 @@ $conn->set_charset("utf8");
 
 //your app
 try {
+	
+	return 1;
 
     if($update->message->text == '/joni')
     {
