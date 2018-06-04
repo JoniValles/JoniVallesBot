@@ -594,7 +594,7 @@ while ($row = mysqli_fetch_array($result))
 
 			$data = "Bien";
     }else{
-		$data = "Mal";
+		$data = $data ."Mal";
 	}
  }
  }
