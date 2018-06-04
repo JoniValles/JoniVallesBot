@@ -514,11 +514,18 @@ $conn->set_charset("utf8");
  $row = mysqli_fetch_array($result);
  $data = "";
  
+if (mysql_num_rows($result)==0) { 
+$data = "Todavia no se han añadido misiones";
+
+ }else{
+	 
+ 
 while ($row = mysqli_fetch_array($result)) {
 		
 		$data = $data . "<b>ID:</b> " .$row['id']." - <b>Recompensa:</b> " . $row['Recompensa'] . " -<b> Pokeparada:</b> ". $row['Pokeparada'] . "\n";
     	
     }
+ }
 	
 	//$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
 
@@ -920,11 +927,18 @@ $conn->set_charset("utf8");
  $row = mysqli_fetch_array($result);
  $data = "";
  
+ if (mysql_num_rows($result)==0) { 
+$data = "Todavia no se han añadido misiones";
+
+ }else{
+	 
+ 
 while ($row = mysqli_fetch_array($result)) {
 		
 		$data = $data . "<b>ID:</b> " .$row['id']." - <b>Recompensa:</b> " . $row['Recompensa'] . " -<b> Pokeparada:</b> ". $row['Pokeparada'] . "\n";
     	
     }
+ }
 	
 	//$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
 
