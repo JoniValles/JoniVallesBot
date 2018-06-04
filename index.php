@@ -505,6 +505,7 @@ while ($row = mysqli_fetch_array($result)) {
 			'parse_mode' => 'HTML',
     		'text' => $data
     		]);
+			 http_response_code(200);
 	}
 	
 	else if(substr($update->message->text, 0, 12 ) === "/misionestec")
@@ -552,6 +553,7 @@ while ($row = mysqli_fetch_array($result)) {
 			'parse_mode' => 'HTML',
     		'text' => $data
     		]);
+			 http_response_code(200);
 	}
 	
 	
@@ -649,6 +651,7 @@ $conn->set_charset("utf8");
     		'chat_id' => $update->message->chat->id,
     		'text' => $data
     		]);
+			 http_response_code(200);
 	}
 	
 	//AÑADIR
@@ -732,6 +735,7 @@ $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'a
     		'chat_id' => $update->message->chat->id,
     		'text' => "Mision confirmada!"
     		]);
+			 http_response_code(200);
 	}
 	
 	
@@ -812,6 +816,7 @@ $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'a
     		'chat_id' => $update->message->chat->id,
     		'text' => "Mision borrada!"
     		]);
+			 http_response_code(200);
 	}
 	
 	
@@ -881,7 +886,7 @@ $conn->set_charset("utf8");
  
 while ($row = mysqli_fetch_array($result)) {
 		
-		$data = $data . "ID: " .$row['id']." - Recompensa: " . $row['Recompensa'] . " - Pokeparada: ". $row['Pokeparada'] . "\n";
+		$data = $data . "<b>ID:</b> " .$row['id']." - <b>Recompensa:</b> " . $row['Recompensa'] . " -<b> Pokeparada:</b> ". $row['Pokeparada'] . "\n";
     	
     }
 	
@@ -890,6 +895,7 @@ while ($row = mysqli_fetch_array($result)) {
     		'chat_id' => $update->message->chat->id,
     		'text' => $data
     		]);
+			 http_response_code(200);
 	}
 	
 	
@@ -942,6 +948,7 @@ $conn->set_charset("utf8");
     		'chat_id' => $update->message->chat->id,
     		'text' => $data
     		]);
+			 http_response_code(200);
 	}
 	
 	//AÑADIR
@@ -1025,6 +1032,7 @@ $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'a
     		'chat_id' => $update->message->chat->id,
     		'text' => "Mision confirmada!"
     		]);
+			 http_response_code(200);
 	}
 	
 	
@@ -1069,7 +1077,13 @@ $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'a
     		'chat_id' => $update->message->chat->id,
     		'text' => "Borradas todas las misiones!"
     		]);
+			 http_response_code(200);
 	}
+	
+	
+	
+	
+	
 	
 		else if(substr($update->message->text, 0, 8) === "//delmision")
     {
@@ -1105,6 +1119,7 @@ $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'a
     		'chat_id' => $update->message->chat->id,
     		'text' => "Mision borrada!"
     		]);
+			 http_response_code(200);
 	}
 	
 	
