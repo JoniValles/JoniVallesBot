@@ -26,7 +26,8 @@ try {
 	http_response_code(200);
     if($update->message->text == '/joni')
     {
-    	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+    	//$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+
     	$response = $client->sendMessage([
         	'chat_id' => $update->message->chat->id,
         	'text' => "Ese Joni como mola se merece una oola"
@@ -35,56 +36,64 @@ try {
     else if($update->message->text == '/rickroll')
     {
 			
-    	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+    	//$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
     		'text' => "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
     		]);
     }else if($update->message->text == '/belen') {
 			
-    	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+    	//$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
     		'text' => "Casuaaaaal"
     		]);
     }else if($update->message->text == '/tomberi') {
 			
-    	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+    	//$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
     		'text' => "https://media.giphy.com/media/l49K0DUalMrMwE9qg/giphy.gif"
     		]);
     }else if($update->message->text == '/pablo') {
 			
-    	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+    	//$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
     		'text' => "Vamos Pablo sal a bailar que tu lo haces fenomenal tu cuerpo se mueve como una palmera suave, suave, su, su, suave"
     		]);
     }else if($update->message->text == '/picky') {
 			
-    	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+    	//$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
     		'text' => "Picky dimision!!!!!"
     		]);
     }else if($update->message->text == '/xavi') {
 			
-    	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+    	//$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
     		'text' => "Estas tardando en confirmar nidos"
     		]);
     }else if($update->message->text == '/yfoms') {
 			
-    	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+    	//$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
     		'text' => "Viva er Beti manque pierda!"
     		]);
     }else if($update->message->text == '/paola') {
 			
-    	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+    	//$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
     		'text' => "Casual"
@@ -151,7 +160,8 @@ try {
  $result = mysqli_query($conn, $query);
  $row = mysqli_fetch_array($result);
 		
-    	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+    	//$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
     		'text' => $row['trainer_name']
@@ -188,7 +198,8 @@ $conn->set_charset("utf8");
  
  while ($row = mysqli_fetch_array($result)) {
 		
-    	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+    	//$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
     		'text' => $row['trainer_name'] . " - Gimnasio: " . $row['name'] . " - Huecos disponibles: ". $row['slots_available']
@@ -213,7 +224,8 @@ $conn->set_charset("utf8");
 $conn->set_charset("utf8");
  if (mysqli_connect_errno()) {
  echo "Failed to connect to MySQL: " . mysqli_connect_error();
- $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+ //$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
     		'text' => "Error"
@@ -230,7 +242,8 @@ $conn->set_charset("utf8");
  
  while ($row = mysqli_fetch_array($result)) {
 		
-    	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+    	//$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
     		'text' => "Gimnasio: " . $row['name'] . " - Huecos disponibles: ". $row['slots_available']
@@ -269,7 +282,8 @@ $conn->set_charset("utf8");
  
  while ($row = mysqli_fetch_array($result)) {
 		
-    	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+    	//$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
     		'text' => $row['trainer_name'] . " - Gimnasio: " . $row['name'] . " - Huecos disponibles: ". $row['slots_available']
@@ -312,7 +326,8 @@ $conn->set_charset("utf8");
  
  while ($row = mysqli_fetch_array($result)) {
 		
-    	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+    	//$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
     		'text' => " Gimnasio: " . $row['name'] . " - Huecos disponibles: ". $row['level']
@@ -357,7 +372,8 @@ $conn->set_charset("utf8");
  $result = mysqli_query($conn, $query);
  $row = mysqli_fetch_array($result);
  
-    	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+    	//$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
     		'text' => Pidgey
@@ -385,7 +401,8 @@ $conn->set_charset("utf8");
 $conn->set_charset("utf8");
  if (mysqli_connect_errno()) {
  echo "Failed to connect to MySQL: " . mysqli_connect_error();
- $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+ //$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
     		'text' => ERROR
@@ -401,7 +418,8 @@ $conn->set_charset("utf8");
  $result = mysqli_query($conn, $query);
  $row = mysqli_fetch_array($result);
  
-    	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+    	//$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
     		'text' => Pidgey
@@ -431,7 +449,8 @@ $conn->set_charset("utf8");
 $conn->set_charset("utf8");
  if (mysqli_connect_errno()) {
  echo "Failed to connect to MySQL: " . mysqli_connect_error();
- $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+ //$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
     		'text' => ERROR
@@ -449,7 +468,8 @@ $conn->set_charset("utf8");
  
 while ($row = mysqli_fetch_array($result)) {
 		
-    	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+    	//$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
     		'text' => "ID: " .$row['id']." - Recompensa: " . $row['Recompensa'] . " - Pokeparada: ". $row['Pokeparada']
@@ -476,7 +496,8 @@ while ($row = mysqli_fetch_array($result)) {
 $conn->set_charset("utf8");
  if (mysqli_connect_errno()) {
  echo "Failed to connect to MySQL: " . mysqli_connect_error();
- $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+ //$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
     		'text' => ERROR
@@ -499,7 +520,8 @@ while ($row = mysqli_fetch_array($result)) {
     	
     }
 	
-	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+	//$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
 			'parse_mode' => 'HTML',
@@ -524,7 +546,8 @@ while ($row = mysqli_fetch_array($result)) {
 $conn->set_charset("utf8");
  if (mysqli_connect_errno()) {
  echo "Failed to connect to MySQL: " . mysqli_connect_error();
- $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+ //$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
     		'text' => ERROR
@@ -547,7 +570,8 @@ while ($row = mysqli_fetch_array($result)) {
     	
     }
 	
-	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+	//$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
 			'parse_mode' => 'HTML',
@@ -623,7 +647,8 @@ while ($row = mysqli_fetch_array($result)) {
 $conn->set_charset("utf8");
  if (mysqli_connect_errno()) {
  echo "Failed to connect to MySQL: " . mysqli_connect_error();
- $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+ //$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
     		'text' => ERROR
@@ -646,7 +671,8 @@ $conn->set_charset("utf8");
     	
     }
 	
-	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+	//$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
     		'text' => $data
@@ -672,7 +698,8 @@ $conn->set_charset("utf8");
 $conn->set_charset("utf8");
  if (mysqli_connect_errno()) {
  echo "Failed to connect to MySQL: " . mysqli_connect_error();
- $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+ //$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
     		'text' => ERROR
@@ -685,7 +712,8 @@ $conn->set_charset("utf8");
  $query = "insert into mision (Recompensa, Pokeparada) values ('$trainer[1]','$trainer[2]')";
  //executing the query 
  mysqli_query($conn, $query) or die('Error querying database.');
-$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+//$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
     		'text' => "Mision confirmada!"
@@ -711,7 +739,8 @@ $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'a
 $conn->set_charset("utf8");
  if (mysqli_connect_errno()) {
  echo "Failed to connect to MySQL: " . mysqli_connect_error();
- $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+ //$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
     		'text' => ERROR
@@ -730,7 +759,8 @@ $conn->set_charset("utf8");
  $query = "insert into mision (Recompensa, Pokeparada) values ('$trainer[1]','$finalData')";
  //executing the query 
  mysqli_query($conn, $query) or die('Error querying database.');
-$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+//$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
     		'text' => "Mision confirmada!"
@@ -765,7 +795,8 @@ $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'a
 $conn->set_charset("utf8");
  if (mysqli_connect_errno()) {
  echo "Failed to connect to MySQL: " . mysqli_connect_error();
- $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+ //$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
     		'text' => ERROR
@@ -775,7 +806,8 @@ $conn->set_charset("utf8");
  $query = "DELETE FROM mision;";
  //executing the query 
  mysqli_query($conn, $query) or die('Error querying database.');
-$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+//$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
     		'text' => "Borradas todas las misiones!"
@@ -798,7 +830,8 @@ $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'a
 $conn->set_charset("utf8");
  if (mysqli_connect_errno()) {
  echo "Failed to connect to MySQL: " . mysqli_connect_error();
- $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+ //$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
     		'text' => ERROR
@@ -811,7 +844,8 @@ $conn->set_charset("utf8");
  $query = "delete from mision where id = $id[1] ";
  //executing the query 
  mysqli_query($conn, $query) or die('Error querying database.');
-$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+//$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
     		'text' => "Mision borrada!"
@@ -867,9 +901,11 @@ $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'a
 $conn->set_charset("utf8");
  if (mysqli_connect_errno()) {
  echo "Failed to connect to MySQL: " . mysqli_connect_error();
- $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+ //$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
+			'parse_mode' => 'HTML',
     		'text' => ERROR
     		]);
  die();
@@ -890,7 +926,8 @@ while ($row = mysqli_fetch_array($result)) {
     	
     }
 	
-	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+	//$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
     		'text' => $data
@@ -920,7 +957,8 @@ while ($row = mysqli_fetch_array($result)) {
 $conn->set_charset("utf8");
  if (mysqli_connect_errno()) {
  echo "Failed to connect to MySQL: " . mysqli_connect_error();
- $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+ //$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
     		'text' => ERROR
@@ -943,7 +981,8 @@ $conn->set_charset("utf8");
     	
     }
 	
-	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+	//$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
     		'text' => $data
@@ -969,7 +1008,8 @@ $conn->set_charset("utf8");
 $conn->set_charset("utf8");
  if (mysqli_connect_errno()) {
  echo "Failed to connect to MySQL: " . mysqli_connect_error();
- $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+ //$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
     		'text' => ERROR
@@ -982,7 +1022,8 @@ $conn->set_charset("utf8");
  $query = "insert into mision (Recompensa, Pokeparada) values ('$trainer[1]','$trainer[2]')";
  //executing the query 
  mysqli_query($conn, $query) or die('Error querying database.');
-$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+//$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
     		'text' => "Mision confirmada!"
@@ -1008,7 +1049,8 @@ $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'a
 $conn->set_charset("utf8");
  if (mysqli_connect_errno()) {
  echo "Failed to connect to MySQL: " . mysqli_connect_error();
- $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+ //$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
     		'text' => ERROR
@@ -1027,7 +1069,8 @@ $conn->set_charset("utf8");
  $query = "insert into misionoviedo (Recompensa, Pokeparada) values ('$trainer[1]','$finalData')";
  //executing the query 
  mysqli_query($conn, $query) or die('Error querying database.');
-$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+//$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
     		'text' => "Mision confirmada!"
@@ -1062,7 +1105,8 @@ $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'a
 $conn->set_charset("utf8");
  if (mysqli_connect_errno()) {
  echo "Failed to connect to MySQL: " . mysqli_connect_error();
- $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+ //$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
     		'text' => ERROR
@@ -1072,7 +1116,8 @@ $conn->set_charset("utf8");
  $query = "DELETE FROM misionoviedo;";
  //executing the query 
  mysqli_query($conn, $query) or die('Error querying database.');
-$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+//$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
     		'text' => "Borradas todas las misiones!"
@@ -1101,7 +1146,8 @@ $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'a
 $conn->set_charset("utf8");
  if (mysqli_connect_errno()) {
  echo "Failed to connect to MySQL: " . mysqli_connect_error();
- $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+ //$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
     		'text' => ERROR
@@ -1114,7 +1160,8 @@ $conn->set_charset("utf8");
  $query = "delete from misionoviedo where id = $id[1] ";
  //executing the query 
  mysqli_query($conn, $query) or die('Error querying database.');
-$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+//$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
     		'text' => "Mision borrada!"
@@ -1147,7 +1194,8 @@ $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'a
 			$lastlink 	= $lastitem->link;
 			$lasttitle 	= $lastitem->title;
 			$message = $lasttitle . " \n ". $lastlink;
-			$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+			//$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+
 			$response = $client->sendMessage([
 					'chat_id' => $update->message->chat->id,
 					'text' => $message
@@ -1160,7 +1208,8 @@ $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'a
 	http_response_code(200);
     //echo error message ot log it
     echo $e->getMessage();
-	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+	//$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
     		'text' => $e
