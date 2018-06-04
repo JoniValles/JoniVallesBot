@@ -591,7 +591,7 @@ while ($row = mysqli_fetch_array($result))
 			$query3 = "insert into mision (Latitude, Longitude) values ('$row2[Longitude]','$row[Latitude]');";
 			$data = "Bien";
     }else{
-		$data = "porcentaje mal";
+		$data .= $row['Pokeparada'];
 	}
  }
  }
