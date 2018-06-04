@@ -583,23 +583,23 @@ $data = "Todavia no se han añadido misiones";
 	 
  
 while ($row = mysqli_fetch_array($result)) 
-	$data = mysqli_num_rows($result);
+	$data = $row['Pokeparada']
 	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
 			'parse_mode' => 'HTML',
     		'text' => $data
     		]);
 	while ($row2 = mysqli_fetch_array($result2)) {
-		$data = "O aqui";
+		//$data = "O aqui";
 		similar_text($row['Pokeparada'], $row2['Name'], $percent);
 		 if($percent > 0){
 			//$query3 = "insert into mision (Latitude, Longitude) values ('$row2[Longitude]','$row[Latitude]');";
 			//$query3 = "insert into mision (Latitude, Longitude) values ('$row2[Longitude]','$row[Latitude]');";
 			//$result4 = mysqli_query($conn, $query3);
 
-			$data = "Bien";
+			//$data = "Bien";
     }else{
-		$data = "Mal";
+		//$data = "Mal";
 	}
  }
  }
