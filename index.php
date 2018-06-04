@@ -514,7 +514,7 @@ $conn->set_charset("utf8");
  $row = mysqli_fetch_array($result);
  $data = "";
  
-if (mysql_num_rows($result)==0) { 
+if (mysqli_num_rows($result)==0) { 
 $data = "Todavia no se han añadido misiones";
 
  }else{
@@ -536,6 +536,9 @@ while ($row = mysqli_fetch_array($result)) {
     		]);
 			 http_response_code(200);
 	}
+	
+	
+	
 	
 	else if(substr($update->message->text, 0, 12 ) === "/misionestec")
     {
@@ -927,7 +930,7 @@ $conn->set_charset("utf8");
  $row = mysqli_fetch_array($result);
  $data = "";
  
- if (mysql_num_rows($result)==0) { 
+ if (mysqli_num_rows($result)==0) { 
 $data = "Todavia no se han añadido misiones";
 
  }else{
@@ -942,8 +945,10 @@ while ($row = mysqli_fetch_array($result)) {
 	
 	//$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
 
+    	
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
+			'parse_mode' => 'HTML',
     		'text' => $data
     		]);
 			 http_response_code(200);
