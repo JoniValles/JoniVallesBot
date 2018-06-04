@@ -583,7 +583,13 @@ $data = "Todavia no se han añadido misiones";
 	 
  
 while ($row = mysqli_fetch_array($result)) 
-	$data = $data ."Aqui" . $row['Pokeparada'];
+	$data = 0;
+	$response = $client->sendMessage([
+    		'chat_id' => $update->message->chat->id,
+			'parse_mode' => 'HTML',
+    		'text' => $data
+    		]);
+			$data++;
 	while ($row2 = mysqli_fetch_array($result2)) {
 		$data = "O aqui";
 		similar_text($row['Pokeparada'], $row2['Name'], $percent);
@@ -594,7 +600,7 @@ while ($row = mysqli_fetch_array($result))
 
 			$data = "Bien";
     }else{
-		$data = $data ."Mal";
+		$data = "Mal";
 	}
  }
  }
