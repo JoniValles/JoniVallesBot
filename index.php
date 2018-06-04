@@ -606,7 +606,7 @@ while ($row = mysqli_fetch_array($result))
 			 http_response_code(200);
 	}
 	
-	}
+
 	
 	
 	
