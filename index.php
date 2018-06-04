@@ -590,10 +590,11 @@ while ($row = mysqli_fetch_array($result))
 		 if($percent > 0){
 			//$query3 = "insert into mision (Latitude, Longitude) values ('$row2[Longitude]','$row[Latitude]');";
 			//$query3 = "insert into mision (Latitude, Longitude) values ('$row2[Longitude]','$row[Latitude]');";
+			//$result4 = mysqli_query($conn, $query3);
 
 			$data = "Bien";
     }else{
-		$data .= $row['Pokeparada']
+		$data .= $row['Pokeparada'];
 	}
  }
  }
