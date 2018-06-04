@@ -778,7 +778,7 @@ $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'a
     		]);
 	}
 	
-		else if(substr($update->message->text, 0, 7) === "/borrar")
+		else if(substr($update->message->text, 0, 7) === "/delmision")
     {
 		
 		
@@ -1071,7 +1071,7 @@ $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'a
     		]);
 	}
 	
-		else if(substr($update->message->text, 0, 8) === "//borrar")
+		else if(substr($update->message->text, 0, 8) === "//delmision")
     {
 		
 		
