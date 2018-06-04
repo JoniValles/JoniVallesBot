@@ -584,7 +584,7 @@ $data = "Todavia no se han añadido misiones";
  
 while ($row = mysqli_fetch_array($result)) 
 	$data = "Aqui";
-	while ($row2 = mysqli_fetch_array($result)) {
+	while ($row2 = mysqli_fetch_array($result2)) {
 		$data = "O aqui";
 		similar_text($row['Pokeparada'], $row2['Name'], $percent);
 		 if($percent > 0){
