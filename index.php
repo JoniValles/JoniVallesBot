@@ -574,7 +574,7 @@ $conn->set_charset("utf8");
  $result2 = mysqli_query($conn, $query2);
  $row = mysqli_fetch_array($result);
  $row2 = mysqli_fetch_array($result2);
- $data = "";
+ $data = "Mal";
  
 if (mysqli_num_rows($result)==0) { 
 $data = "Todavia no se han añadido misiones";
@@ -587,7 +587,7 @@ while ($row = mysqli_fetch_array($result)) {
 		similar_text($row['Pokeparada'], $row2['Name'], $percent);
 		 if($percent > 0){
 			$query3 = "insert into mision (Latitude, Longitude) values ('$row2[Longitude]','$row[Latitude]');";
-    	
+			$data = "Bien";
     }
  }
  }
@@ -597,7 +597,7 @@ while ($row = mysqli_fetch_array($result)) {
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
 			'parse_mode' => 'HTML',
-    		'text' => "Mapeado"
+    		'text' => $data
     		]);
 			 http_response_code(200);
 	}
