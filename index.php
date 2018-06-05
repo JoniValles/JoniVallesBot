@@ -576,7 +576,6 @@ $conn->set_charset("utf8");
  $result2 = mysqli_query($conn, $query2);
  $row = mysqli_fetch_array($result);
  $row2 = mysqli_fetch_array($result2);
- $data = "Mal";
  
 if (mysqli_num_rows($result)==0) { 
 $data = "Todavia no se han añadido misiones";
