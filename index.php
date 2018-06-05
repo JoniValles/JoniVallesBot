@@ -588,7 +588,13 @@ while ($row = mysqli_fetch_array($result))
 		 if($percent > 90){
 			//$query3 = "insert into mision (Latitude, Longitude) values ('$row2[Longitude]','$row[Latitude]');";
 			//$query3 = "insert into mision (Latitude, Longitude,Pokeparadareal) values ('$row2[Longitude]','$row2[Latitude]','$row2[Name]') where Pokeparada = '$row['Pokeparada']';";
-			$query3 = "update mision set Latitude='$row2['Latitude']',Longitude='$row2['Longitude']',PokeparadaReal='$row2['Name']' where Pokeparada = '$row['Pokeparada']';";
+			$latitude = $row2[Latitude];
+			$longitude = $row2[Longitude];
+			$name = $row2[Name];
+			$pokeparada = $row[Pokeparada];
+			//$query3 = "update mision set Latitude='$row2[Latitude]',Longitude='$row2[Longitude]',PokeparadaReal='$row2[Name]' where Pokeparada = '$$row2[Name]'';";
+			$query3 = "update mision set Latitude='$latitude',Longitude='$longitude',PokeparadaReal='$name' where Pokeparada = '$pokeparada'';";
+
 			$result4 = mysqli_query($conn, $query3);
 
 			$data = "Bien";
