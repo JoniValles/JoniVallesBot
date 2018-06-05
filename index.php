@@ -1350,15 +1350,7 @@ http_response_code(200);
 	 
  
 while ($row = mysqli_fetch_array($result)) {
-		if (empty($row['Latitude'])) {
-			$data = $data . "<b>ID:</b> " .$row['id']." - <b>Recompensa:</b> " . $row['Recompensa'] . " -<b> Pokeparada:</b> ". $row['Pokeparada']."\n";
-			$response = $client->sendMessage([
-    		'chat_id' => $update->message->chat->id,
-			'parse_mode' => 'HTML',
-    		'text' => $data
-    		]);
-			 http_response_code(200);
-		}else{
+
 		$data = $data . "<b>ID:</b> " .$row['id']." - <b>Recompensa:</b> " . $row['Recompensa'] . " -<b> Pokeparada:</b> ". $row['Pokeparada'] ." - "."https://www.google.com/maps/?q=".$row['Latitude'].",".$row['Longitude'] ."\n";
 		$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
@@ -1366,7 +1358,7 @@ while ($row = mysqli_fetch_array($result)) {
     		'text' => $data
     		]);
 			 http_response_code(200);
-    	}
+    	
     }
  }
 	
