@@ -541,7 +541,7 @@ while ($row = mysqli_fetch_array($result)) {
 	
 	
 	
-	else if(substr($update->message->text, 0, 4 ) === "/map")
+	/*else if(substr($update->message->text, 0, 4 ) === "/map")
     {
 		
 		
@@ -626,7 +626,7 @@ foreach ($pokeparada as $key => $row) {
 	}
 	
 
-	
+	}*/
 	
 	
 	
