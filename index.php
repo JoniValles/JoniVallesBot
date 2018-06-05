@@ -1336,7 +1336,7 @@ $conn->set_charset("utf8");
  
  
  $trainer = explode(" ", $update->message->text);
- $query = "select * from mision;";
+ $query = "select * from misionoviedo;";
  //executing the query 
  mysqli_query($conn, $query) or die('Error querying database.');
  $result = mysqli_query($conn, $query);
