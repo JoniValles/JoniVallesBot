@@ -684,7 +684,7 @@ $conn->set_charset("utf8");
 
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
-    		'text' => $location;
+    		'text' => $latitude;
     		]);
 			 http_response_code(200);
 	}
