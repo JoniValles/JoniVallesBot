@@ -643,7 +643,7 @@ foreach ($pokeparada as $key => $row) {
 	
 	
 	
-	else if(substr($update->message->text, 0, 7) === "/prueba")
+	else if(substr($update->message->text, 0, 2) === "/p")
     {
 		
 		
