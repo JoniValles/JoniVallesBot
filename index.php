@@ -679,7 +679,7 @@ $conn->set_charset("utf8");
  $longitude = $update->message->reply_to_message->location->latitude;
  $username = $update->message->username;
  $a = $update->message->chat->type;
- $x = $update->message->reply_to_message->message_id;
+ $x = $update->message->reply_to_message->text;
 
  $query = "insert into mision (Latitud, Longitud) values ('$latitude','$longitude')";
  //executing the query 
