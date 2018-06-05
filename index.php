@@ -685,7 +685,7 @@ $conn->set_charset("utf8");
  $id = explode(" ", $update->message->reply_to_message->text);
 
  //$query = "insert into mision (Latitude, Longitude) values ($latitude,$longitude);";
-	$query = "update mision set Latitude = $latitude , Longitude = $longitude where id = '$id[1]';";
+	$query = "update misionoviedo set Latitude = $latitude , Longitude = $longitude where id = '$id[1]';";
  //executing the query 
 
  mysqli_query($conn, $query) or die('Error querying database.');
