@@ -594,7 +594,7 @@ while ($row = mysqli_fetch_array($result))
 			//$name = $row2[Name];
 			//$pokeparada = $row[Pokeparada];
 			$data = $data . $row['Pokeparada'];
-			$query3 = "update mision set Latitude='$row2[Latitude]',Longitude='$row2[Longitude]',PokeparadaReal='$row2[Name]' where Pokeparada = '$row2[Name]';";
+			$query3 = "update mision set Latitude='$row2[Latitude]',Longitude='$row2[Longitude]',PokeparadaReal='$row2[Name]' where Pokeparada = '$row2[Pokeparada]';";
 			//$query3 = "update mision set Latitude='$latitude',Longitude='$longitude',PokeparadaReal='$name' where Pokeparada = '$pokeparada'';";
 
 			$result4 = mysqli_query($conn, $query3);
