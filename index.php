@@ -575,7 +575,7 @@ $conn->set_charset("utf8");
  $result = mysqli_query($conn, $query);
  $result2 = mysqli_query($conn, $query2);
  $row = mysqli_fetch_array($result);
- //$row2 = mysqli_fetch_array($result2);
+ $row2 = mysqli_fetch_array($result2);
  
 if (mysqli_num_rows($result)==0) { 
 $data = "Todavia no se han añadido misiones";
