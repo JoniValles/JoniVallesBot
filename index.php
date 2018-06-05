@@ -540,7 +540,7 @@ while ($row = mysqli_fetch_array($result)) {
 	}
 	
 	
-	else if(substr($update->message->text, 0, 7) === "//lista")
+	else if(substr($update->message->text, 0, 6) === "/lista")
     {
 		http_response_code(200);
 		
