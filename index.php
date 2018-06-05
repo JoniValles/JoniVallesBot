@@ -920,7 +920,7 @@ $conn->set_charset("utf8");
     		]);
 	}
 	
-		else if(substr($update->message->text, 0, 11) === "/delmision")
+		else if(substr($update->message->text, 0, 10) === "/delmision")
     {
 		
 		
