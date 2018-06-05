@@ -586,6 +586,7 @@ $data = "Todavia no se han añadido misiones";
 while ($row = mysqli_fetch_array($result)) 
 	while ($row2 = mysqli_fetch_array($result2)) {
 		similar_text($row['Pokeparada'], $row2['Name'], $percent);
+		$data = $percent;
 		 if($percent > 75){
 			//$query3 = "insert into mision (Latitude, Longitude) values ('$row2[Longitude]','$row[Latitude]');";
 			//$query3 = "insert into mision (Recompensa, Pokeparada, Latitude, Longitude,Pokeparadareal) values ('$row['Recompensa']','$row['Pokeparada']','$row2[Longitude]','$row2[Latitude]','$row2[Name]') where Pokeparada = '$row['Pokeparada']';";
@@ -601,7 +602,7 @@ while ($row = mysqli_fetch_array($result))
 
 			
     }else{
-		//$data = "Mal";
+	$data = $percent;
 	}
  }
  }
