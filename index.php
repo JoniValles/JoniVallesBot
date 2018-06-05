@@ -639,7 +639,7 @@ foreach ($pokeparada as $key => $row) {
 	
 	
 	
-	
+	//UBICACION
 	
 	
 	
@@ -682,16 +682,16 @@ $conn->set_charset("utf8");
  $username = $update->message->username;
  $a = $update->message->chat->type;
  //$x = $update->message->reply_to_message->text;
- $y = explode(" ", $update->message->reply_to_message->text);
+ $id = explode(" ", $update->message->reply_to_message->text);
 
- $query = "insert into mision (Latitud, Longitud) values ('$latitude','$longitude') where id = $y[1]";
+ $query = "insert into mision (Latitud, Longitud) values ('$latitude','$longitude') where id = $id[1]";
  //executing the query 
  //mysqli_query($conn, $query) or die('Error querying database.');
 //$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
 
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
-    		'text' => $latitude
+    		'text' => $latitude . "," . $longitude . " ID: " . $id[1]
     		]);
 			 http_response_code(200);
 	}
