@@ -1308,7 +1308,7 @@ $conn->set_charset("utf8");
 	
 	
 	
-	else if(substr($update->message->text, 0, 9 ) === "/misiones")
+	else if(substr($update->message->text, 0, 7) === "//lista")
     {
 		
 		
