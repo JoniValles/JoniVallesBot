@@ -574,7 +574,7 @@ $conn->set_charset("utf8");
  mysqli_query($conn, $query) or die('Error querying database.');
  $result = mysqli_query($conn, $query);
  $result2 = mysqli_query($conn, $query2);
- //$row = mysqli_fetch_array($result);
+ $row = mysqli_fetch_array($result);
  //$row2 = mysqli_fetch_array($result2);
  
 if (mysqli_num_rows($result)==0) { 
@@ -583,8 +583,11 @@ $data = "Todavia no se han añadido misiones";
  }else{
 	 
  
-while ($row = mysqli_fetch_array($result)) 
-	while ($row2 = mysqli_fetch_array($result2)) {
+while ($row2 = mysqli_fetch_array($result2)) 
+	//while ($row = mysqli_fetch_array($result)) {
+		$length = count($row);
+		for ($i = 0; $i < $length; $i++) {
+		
 		similar_text($row['Pokeparada'], $row2['Name'], $percent);
 		$data = $data .$row['Pokeparada'] . " - " . $row2['Name'] . " Porcentaje: ". $percent ."\n";
 		
