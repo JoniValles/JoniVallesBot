@@ -25,7 +25,7 @@ $update = json_decode(file_get_contents('php://input'));
 try {
 	http_response_code(200);
     if($update->message->text == '/joni')
-    {
+    {http_response_code(200);
     	//$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
 
     	$response = $client->sendMessage([
@@ -35,7 +35,7 @@ try {
     }
     else if($update->message->text == '/rickroll')
     {
-			
+			http_response_code(200);
     	//$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
 
     	$response = $client->sendMessage([
@@ -43,7 +43,7 @@ try {
     		'text' => "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
     		]);
     }else if($update->message->text == '/belen') {
-			
+			http_response_code(200);
     	//$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
 
     	$response = $client->sendMessage([
@@ -51,7 +51,7 @@ try {
     		'text' => "Casuaaaaal"
     		]);
     }else if($update->message->text == '/tomberi') {
-			
+			http_response_code(200);
     	//$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
 
     	$response = $client->sendMessage([
@@ -59,7 +59,7 @@ try {
     		'text' => "https://media.giphy.com/media/l49K0DUalMrMwE9qg/giphy.gif"
     		]);
     }else if($update->message->text == '/pablo') {
-			
+			http_response_code(200);
     	//$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
 
     	$response = $client->sendMessage([
@@ -67,7 +67,7 @@ try {
     		'text' => "Vamos Pablo sal a bailar que tu lo haces fenomenal tu cuerpo se mueve como una palmera suave, suave, su, su, suave"
     		]);
     }else if($update->message->text == '/picky') {
-			
+			http_response_code(200);
     	//$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
 
     	$response = $client->sendMessage([
@@ -75,7 +75,7 @@ try {
     		'text' => "Picky dimision!!!!!"
     		]);
     }else if($update->message->text == '/xavi') {
-			
+			http_response_code(200);
     	//$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
 
     	$response = $client->sendMessage([
@@ -83,7 +83,7 @@ try {
     		'text' => "Estas tardando en confirmar nidos"
     		]);
     }else if($update->message->text == '/yfoms') {
-			
+			http_response_code(200);
     	//$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
 
     	$response = $client->sendMessage([
@@ -91,7 +91,7 @@ try {
     		'text' => "Viva er Beti manque pierda!"
     		]);
     }else if($update->message->text == '/paola') {
-			
+			http_response_code(200);
     	//$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
 
     	$response = $client->sendMessage([
@@ -106,7 +106,7 @@ try {
 			'longitude' => -5.03234
      			]);
     }else if($update->message->text == '/recompensas') {
-			
+			http_response_code(200);
     	$response = $client->sendPhoto([
         		'chat_id' => $update->message->chat->id,
 			'photo' => 'https://i.imgur.com/Jo1U31G.jpg'
@@ -123,7 +123,7 @@ try {
 			'text' => 'Test'
      			]);
     }*/else if($update->message->text == '/prueba') {
-			
+			http_response_code(200);
     	$response = $client->sendPhoto([
         		'chat_id' => $update->message->chat->id,
 			'photo' => 'https://i.imgur.com/Jo1U31G.jpg'
@@ -149,7 +149,7 @@ try {
     }
 	
 	
-	 
+	 /*
 	
 	
 	else if($update->message->text == '/gym')
@@ -294,8 +294,7 @@ $conn->set_charset("utf8");
 	
 	
 	
-	
-	
+
 	
 	else if(substr($update->message->text, 0, 4 ) === "/ex ")
     {
@@ -333,7 +332,7 @@ $conn->set_charset("utf8");
     		'text' => " Gimnasio: " . $row['name'] . " - Huecos disponibles: ". $row['level']
     		]);
     }
-	}
+	} */
 	
 	
 	
@@ -343,7 +342,7 @@ $conn->set_charset("utf8");
 	#########################POKEMON##############################################################
 	##############################################################################################
 	
-	
+	/*
 	
 	 else if(substr($update->message->text, 0, 8 ) === "/pidgey ")
     {
@@ -379,7 +378,7 @@ $conn->set_charset("utf8");
     		'text' => Pidgey
     		]);
     
-	}
+	} 
 	
 	
 	
@@ -387,7 +386,7 @@ $conn->set_charset("utf8");
 	
 	else if(substr($update->message->text, 0, 9 ) === "/pokestop")
     {
-		
+		http_response_code(200);
 		
 		 //connecting to database and getting the connection object
 //database constants
@@ -425,7 +424,7 @@ $conn->set_charset("utf8");
     		'text' => Pidgey
     		]);
     
-	}
+	} */
 	
 	
 	
@@ -482,7 +481,7 @@ while ($row = mysqli_fetch_array($result)) {
 	
 	else if(substr($update->message->text, 0, 9 ) === "/misiones")
     {
-		
+		http_response_code(200);
 		
 		 //connecting to database and getting the connection object
 //database constants
@@ -503,6 +502,7 @@ $conn->set_charset("utf8");
     		'text' => ERROR
     		]);
  die();
+ http_response_code(200);
  }
  
  
@@ -516,7 +516,7 @@ $conn->set_charset("utf8");
  
 if (mysqli_num_rows($result)==0) { 
 $data = "Todavia no se han añadido misiones";
-
+http_response_code(200);
  }else{
 	 
  
@@ -645,6 +645,7 @@ foreach ($pokeparada as $key => $row) {
 	
 	else if(!is_null($update->message->reply_to_message->message_id))
     {
+		http_response_code(200);
 		
 		
 		 //connecting to database and getting the connection object
@@ -666,6 +667,7 @@ $conn->set_charset("utf8");
     		'text' => ERROR
     		]);
  die();
+ http_response_code(200);
  }
  
  
@@ -748,7 +750,7 @@ $conn->set_charset("utf8");
 	else if(substr($update->message->text, 0, 11 ) === "/aerodactyl")
     {
 		
-		
+		http_response_code(200);
 		 //connecting to database and getting the connection object
 //database constants
  define('DB_HOST', 'den1.mysql2.gear.host');
@@ -768,6 +770,7 @@ $conn->set_charset("utf8");
     		'text' => ERROR
     		]);
  die();
+ http_response_code(200);
  }
  
  
@@ -838,7 +841,7 @@ $conn->set_charset("utf8");
 	//AÑADIR MISION
 	
 	else if(substr($update->message->text, 0, 10) === "/confirmar")
-    {
+    {http_response_code(200);
 		
 		
 		 //connecting to database and getting the connection object
@@ -860,6 +863,7 @@ $conn->set_charset("utf8");
     		'text' => ERROR
     		]);
  die();
+ http_response_code(200);
  }
  
  
@@ -895,7 +899,7 @@ $conn->set_charset("utf8");
 	
 	else if(substr($update->message->text, 0, 15) === "/borrartodotodo")
     {
-		
+		http_response_code(200);
 		
 		 //connecting to database and getting the connection object
 //database constants
@@ -951,6 +955,7 @@ $conn->set_charset("utf8");
     		'text' => ERROR
     		]);
  die();
+ http_response_code(200);
  }
  
  
@@ -1000,7 +1005,7 @@ $conn->set_charset("utf8");
 	
 	
 	else if(substr($update->message->text, 0, 10 ) === "//misiones")
-    {
+    {http_response_code(200);
 		
 		
 		 //connecting to database and getting the connection object
@@ -1023,6 +1028,7 @@ $conn->set_charset("utf8");
     		'text' => ERROR
     		]);
  die();
+ http_response_code(200);
  }
  
  
@@ -1036,7 +1042,7 @@ $conn->set_charset("utf8");
  
  if (mysqli_num_rows($result)==0) { 
 $data = "Todavia no se han añadido misiones";
-
+http_response_code(200);
  }else{
 	 
  
@@ -1066,7 +1072,7 @@ while ($row = mysqli_fetch_array($result)) {
 	
 	else if(substr($update->message->text, 0, 12 ) === "//aerodactyl")
     {
-		
+		http_response_code(200);
 		
 		 //connecting to database and getting the connection object
 //database constants
@@ -1158,7 +1164,7 @@ $conn->set_charset("utf8");
 	
 	else if(substr($update->message->text, 0, 11) === "//confirmar")
     {
-		
+		http_response_code(200);
 		
 		 //connecting to database and getting the connection object
 //database constants
@@ -1179,6 +1185,7 @@ $conn->set_charset("utf8");
     		'text' => ERROR
     		]);
  die();
+ http_response_code(200);
  }
  
  
@@ -1214,7 +1221,7 @@ $conn->set_charset("utf8");
 	
 	else if(substr($update->message->text, 0, 16) === "//borrartodotodo")
     {
-		
+		http_response_code(200);
 		
 		 //connecting to database and getting the connection object
 //database constants
@@ -1235,6 +1242,7 @@ $conn->set_charset("utf8");
     		'text' => ERROR
     		]);
  die();
+ http_response_code(200);
  }
  $query = "DELETE FROM misionoviedo;";
  //executing the query 
@@ -1255,7 +1263,7 @@ $conn->set_charset("utf8");
 	
 		else if(substr($update->message->text, 0, 11) === "//delmision")
     {
-		
+		http_response_code(200);
 		
 		 //connecting to database and getting the connection object
 //database constants
@@ -1276,6 +1284,7 @@ $conn->set_charset("utf8");
     		'text' => ERROR
     		]);
  die();
+ http_response_code(200);
  }
  
  
