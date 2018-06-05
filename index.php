@@ -975,7 +975,7 @@ $conn->set_charset("utf8");
 	}
 	
 	
-	else if(substr($update->message->text, 0, 13) === "/delubicacion")
+	else if(substr($update->message->text, 0, 14) === "//delubicacion")
     {
 		
 		
@@ -1010,7 +1010,7 @@ $conn->set_charset("utf8");
 
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
-    		'text' => "Mision borrada!"
+    		'text' => "Ubicacion borrada de ID: ". $id[1]
     		]);
 			 http_response_code(200);
 	}
