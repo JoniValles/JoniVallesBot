@@ -1387,13 +1387,21 @@ $conn->set_charset("utf8");
 while ($row = mysqli_fetch_array($result)) {
 		
     	//$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
-
+if (empty($row['Latitude'])) {
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
-    		'text' => "ID: " .$row['id']." - Recompensa: " . $row['Recompensa'] . " - Pokeparada: ". $row['Pokeparada']
+    		'text' => "<b>ID:</b> " .$row['id']." - <b>Recompensa:</b> " . $row['Recompensa'] . " -<b> Pokeparada:</b> ". $row['Pokeparada']."\n";
     		]);
+}else{
+	$response = $client->sendMessage([
+    		'chat_id' => $update->message->chat->id,
+    		'text' => "<b>ID:</b> " .$row['id']." - <b>Recompensa:</b> " . $row['Recompensa'] . " -<b> Pokeparada:</b> ". $row['Pokeparada'] ." - "."https://www.google.com/maps/?q=".$row['Latitude'].",".$row['Longitude'] ."\n";
+    		]);
+	
+}
     }
 	} 
+ }
 	
 	
 	
