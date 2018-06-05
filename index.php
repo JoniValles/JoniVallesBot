@@ -574,22 +574,26 @@ $conn->set_charset("utf8");
  mysqli_query($conn, $query) or die('Error querying database.');
  $result = mysqli_query($conn, $query);
  $result2 = mysqli_query($conn, $query2);
- $row = mysqli_fetch_array($result);
- $row2 = mysqli_fetch_array($result2);
+ //$row = mysqli_fetch_array($result);
+ //$row2 = mysqli_fetch_array($result2);
  
 if (mysqli_num_rows($result)==0) { 
 $data = "Todavia no se han añadido misiones";
 
  }else{
 	 
+	 
+	 while ($row = mysqli_fetch_array($result)) {
+     $pokeparada[] = $row;
+}
+while ($row2 = mysqli_fetch_array($result2)) {
+     $pokestop[] = $row;
+}
  
-while ($row2 = mysqli_fetch_array($result2)) 
-	//while ($row = mysqli_fetch_array($result)) {
-		$length = count($row);
-		for ($i = 0; $i < $length; $i++) {
-		
+foreach ($pokeparada as $key => $row) {
+	foreach ($pokestop as $key => $row2) {
 		similar_text($row['Pokeparada'], $row2['Name'], $percent);
-		$data = $data .$row['Pokeparada'] . " - " . $row2['Name'] . " Porcentaje: ". $percent ."\n";
+		$data = $data .$row['Pokeparada'] . " - " . $row['Name'] . " Porcentaje: ". $percent ."\n";
 		
 		 if($percent > 75){
 			//$query3 = "insert into mision (Latitude, Longitude) values ('$row2[Longitude]','$row[Latitude]');";
