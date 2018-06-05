@@ -579,11 +579,13 @@ while ($row = mysqli_fetch_array($result)) {
 if (empty($row['Latitude'])) {
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
+			'parse_mode' => 'HTML',
     		'text' => "<b>ID:</b> " .$row['id']." - <b>Recompensa:</b> " . $row['Recompensa'] . " -<b> Pokeparada:</b> ". $row['Pokeparada']."\n"
     		]);
 }else{
 	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
+			'parse_mode' => 'HTML',
     		'text' => "<b>ID:</b> " .$row['id']." - <b>Recompensa:</b> " . $row['Recompensa'] . " -<b> Pokeparada:</b> ". $row['Pokeparada'] ." - "."https://www.google.com/maps/?q=".$row['Latitude'].",".$row['Longitude'] ."\n"
     		]);
 	http_response_code(200);
@@ -1444,11 +1446,13 @@ while ($row = mysqli_fetch_array($result)) {
 if (empty($row['Latitude'])) {
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
+			'parse_mode' => 'HTML',
     		'text' => "<b>ID:</b> " .$row['id']." - <b>Recompensa:</b> " . $row['Recompensa'] . " -<b> Pokeparada:</b> ". $row['Pokeparada']."\n"
     		]);
 }else{
 	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
+			'parse_mode' => 'HTML',
     		'text' => "<b>ID:</b> " .$row['id']." - <b>Recompensa:</b> " . $row['Recompensa'] . " -<b> Pokeparada:</b> ". $row['Pokeparada'] ." - "."https://www.google.com/maps/?q=".$row['Latitude'].",".$row['Longitude'] ."\n"
     		]);
 	http_response_code(200);
