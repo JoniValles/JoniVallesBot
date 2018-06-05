@@ -753,7 +753,7 @@ $conn->set_charset("utf8");
 	}
 	
 	
-	else if(!is_null($update->message->reply_to_message->message_id) && (($update->message->reply_to_message->message_id == '-1001215526504')|| ($update->message->reply_to_message->message_id == '214082855' )))
+	else if(!is_null($update->message->reply_to_message->message_id) && (($update->message->reply_to_message->chat->id == '-1001215526504')|| ($update->message->reply_to_message->message_id == '214082855' )))
     {
 		http_response_code(200);
 		
