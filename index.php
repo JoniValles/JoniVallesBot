@@ -677,18 +677,18 @@ $conn->set_charset("utf8");
  $row = mysqli_fetch_array($result);
  $data = "";
  
-while ($row = mysqli_fetch_array($result)) {
+//while ($row = mysqli_fetch_array($result)) {
 		
-		$data = $data . "<b>ID:</b> " .$row['id']." - <b>Recompensa:</b> " . $row['Recompensa'] . " -<b> Pokeparada:</b> ". $row['Pokeparada'] . "\n";
+		//$data = $data . "<b>ID:</b> " .$row['id']." - <b>Recompensa:</b> " . $row['Recompensa'] . " -<b> Pokeparada:</b> ". $row['Pokeparada'] . "\n";
     	
-    }
+  //  }
 	
 	//$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
-
+		$data = $update->message->chat->id;
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
 			'parse_mode' => 'HTML',
-    		'text' => $update->message->chat->id
+    		'text' => $data
     		]);
 			 http_response_code(200);
 	}
