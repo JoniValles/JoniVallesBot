@@ -1048,7 +1048,8 @@ $conn->set_charset("utf8");
 	
 	
 	else if(substr($update->message->text, 0, 10 ) === "//misiones")
-    {http_response_code(200);
+    {
+		http_response_code(200);
 		
 		
 		 //connecting to database and getting the connection object
@@ -1402,7 +1403,7 @@ if (empty($row['Latitude'])) {
 }
     }
 	} 
- }
+ 
 	
 	
 	
