@@ -1308,9 +1308,9 @@ $conn->set_charset("utf8");
 	
 	
 	
-	else if(substr($update->message->text, 0, 7) === "//lista")
+	else if(substr($update->message->text, 0, 9 ) === "/misiones")
     {
-		http_response_code(200);
+		
 		
 		 //connecting to database and getting the connection object
 //database constants
@@ -1331,7 +1331,6 @@ $conn->set_charset("utf8");
     		'text' => ERROR
     		]);
  die();
- http_response_code(200);
  }
  
  
@@ -1341,31 +1340,17 @@ $conn->set_charset("utf8");
  mysqli_query($conn, $query) or die('Error querying database.');
  $result = mysqli_query($conn, $query);
  $row = mysqli_fetch_array($result);
- $data = "";
- 
-if (mysqli_num_rows($result)==0) { 
-$data = "Todavia no se han añadido misiones";
-http_response_code(200);
- }else{
-	 
  
 while ($row = mysqli_fetch_array($result)) {
+		
+    	//$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
 
-		$data = $data . "<b>ID:</b> " .$row['id']." - <b>Recompensa:</b> " . $row['Recompensa'] . " -<b> Pokeparada:</b> ". $row['Pokeparada'] ." - "."https://www.google.com/maps/?q=".$row['Latitude'].",".$row['Longitude'] ."\n";
-		$response = $client->sendMessage([
+    	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
-			'parse_mode' => 'HTML',
-    		'text' => $data
+    		'text' => "ID: " .$row['id']." - Recompensa: " . $row['Recompensa'] . " - Pokeparada: ". $row['Pokeparada']
     		]);
-			 http_response_code(200);
-    	
     }
- }
-	
-	//$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
-
-    	
-	}
+	} 
 	
 	
 	
