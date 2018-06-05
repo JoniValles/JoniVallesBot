@@ -574,8 +574,8 @@ $conn->set_charset("utf8");
  mysqli_query($conn, $query) or die('Error querying database.');
  $result = mysqli_query($conn, $query);
  $result2 = mysqli_query($conn, $query2);
- $row = mysqli_fetch_array($result);
- $row2 = mysqli_fetch_array($result2);
+ //$row = mysqli_fetch_array($result);
+ //$row2 = mysqli_fetch_array($result2);
  
 if (mysqli_num_rows($result)==0) { 
 $data = "Todavia no se han añadido misiones";
@@ -586,7 +586,7 @@ $data = "Todavia no se han añadido misiones";
 while ($row = mysqli_fetch_array($result)) 
 	while ($row2 = mysqli_fetch_array($result2)) {
 		similar_text($row['Pokeparada'], $row2['Name'], $percent);
-		 if($percent > 80){
+		 if($percent > 75){
 			//$query3 = "insert into mision (Latitude, Longitude) values ('$row2[Longitude]','$row[Latitude]');";
 			//$query3 = "insert into mision (Recompensa, Pokeparada, Latitude, Longitude,Pokeparadareal) values ('$row['Recompensa']','$row['Pokeparada']','$row2[Longitude]','$row2[Latitude]','$row2[Name]') where Pokeparada = '$row['Pokeparada']';";
 			//$latitude = $row2[Latitude];
