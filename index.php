@@ -747,11 +747,66 @@ $conn->set_charset("utf8");
 
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
-    		'text' => $latitude . "," . $longitude . " ID: " . $id[1]
+    		'text' => "Ubicacion añadida!"
     		]);
 			 http_response_code(200);
 	}
 	
+	
+	else if(!is_null($update->message->reply_to_message->message_id))
+    {
+		http_response_code(200);
+		
+		
+		 //connecting to database and getting the connection object
+//database constants
+ define('DB_HOST', 'den1.mysql2.gear.host');
+ define('DB_USER', 'pmgmisiones');
+ define('DB_PASS', "Mw78_Gz8-CJs");
+ define('DB_NAME', 'PMGMisiones');
+ 
+ //connecting to database and getting the connection object
+ $conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+$conn->set_charset("utf8");
+ if (mysqli_connect_errno()) {
+ echo "Failed to connect to MySQL: " . mysqli_connect_error();
+ //$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+
+    	$response = $client->sendMessage([
+    		'chat_id' => $update->message->chat->id,
+    		'text' => ERROR
+    		]);
+ die();
+ http_response_code(200);
+ }
+ 
+ 
+ $trainer = explode(" ", $update->message->text);
+ $pokestop = explode(' ', $update->message->text);
+ $data = $trainer;
+ unset($data[0]);
+ unset($data[1]);
+ $finalData = implode(" ", $data);
+ $latitude = $update->message->location->latitude;
+ $longitude = $update->message->location->longitude;
+ $username = $update->message->username;
+ $a = $update->message->chat->type;
+ //$x = $update->message->reply_to_message->text;
+ $id = explode(" ", $update->message->reply_to_message->text);
+
+ //$query = "insert into mision (Latitude, Longitude) values ($latitude,$longitude);";
+	$query = "update mision set Latitude = $latitude , Longitude = $longitude where id = '$id[1]';";
+ //executing the query 
+
+ mysqli_query($conn, $query) or die('Error querying database.');
+//$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+
+    	$response = $client->sendMessage([
+    		'chat_id' => $update->message->chat->id,
+    		'text' => "Ubicacion añadida!"
+    		]);
+			 http_response_code(200);
+	}
 	
 	
 	
