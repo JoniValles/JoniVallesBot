@@ -643,7 +643,7 @@ foreach ($pokeparada as $key => $row) {
 	
 	
 	
-	else if($update->message->chat->username === "JoniValles")
+	else if(substr($update->message->text, 0, 5) === "/algo")
     {
 		
 		
@@ -677,14 +677,16 @@ $conn->set_charset("utf8");
  $finalData = implode(" ", $data);
  $latitude = $update->message->reply_to_message->location->latitude;
  $longitude = $update->message->reply_to_message->location->latitude;
+ $username = $update->message->username;
+ $a = $update->message->chat->type;
  $query = "insert into mision (Latitud, Longitud) values ('$latitude','$longitude')";
  //executing the query 
- mysqli_query($conn, $query) or die('Error querying database.');
+ //mysqli_query($conn, $query) or die('Error querying database.');
 //$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
 
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
-    		'text' => "JONI"
+    		'text' => $username . $a
     		]);
 			 http_response_code(200);
 	}
