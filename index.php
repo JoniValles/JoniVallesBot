@@ -588,10 +588,10 @@ while ($row = mysqli_fetch_array($result))
 		$data = $percent;
 		 if($percent > 0){
 			//$query3 = "insert into mision (Latitude, Longitude) values ('$row2[Longitude]','$row[Latitude]');";
-			//$query3 = "insert into mision (Latitude, Longitude) values ('$row2[Longitude]','$row[Latitude]');";
-			//$result4 = mysqli_query($conn, $query3);
+			$query3 = "insert into mision (Latitude, Longitude) values ('$row2[Longitude]','$row[Latitude]');";
+			$result4 = mysqli_query($conn, $query3);
 
-			$data = "Bien";
+			//$data = "Bien";
     }else{
 		//$data = "Mal";
 	}
