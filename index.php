@@ -643,7 +643,7 @@ foreach ($pokeparada as $key => $row) {
 	
 	
 	
-	else if(substr($update->message->text, 0, 2) === "/p")
+	else if(substr($update->message->text, 0, 10) === "/ubicacion")
     {
 		
 		
@@ -670,25 +670,21 @@ $conn->set_charset("utf8");
  
  
  $trainer = explode(" ", $update->message->text);
- $query = "select * from mision;";
+ $pokestop = explode(' ', $update->message->text);
+ $data = $trainer;
+ unset($data[0]);
+ unset($data[1]);
+ $finalData = implode(" ", $data);
+ $latitude = $update->message->reply_to_message->location->latitude;
+ $longitude = $update->message->reply_to_message->location->latitude;
+ $query = "insert into mision (Latitud, Longitud) values ('$latitude','$longitude')";
  //executing the query 
  mysqli_query($conn, $query) or die('Error querying database.');
- $result = mysqli_query($conn, $query);
- $row = mysqli_fetch_array($result);
- $data = "";
- 
-//while ($row = mysqli_fetch_array($result)) {
-		
-		//$data = $data . "<b>ID:</b> " .$row['id']." - <b>Recompensa:</b> " . $row['Recompensa'] . " -<b> Pokeparada:</b> ". $row['Pokeparada'] . "\n";
-    	
-  //  }
-	
-	//$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
-		$data = $update->message->chat->id;
+//$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
-			'parse_mode' => 'HTML',
-    		'text' => $data
+    		'text' => $location;
     		]);
 			 http_response_code(200);
 	}
