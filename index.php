@@ -522,7 +522,7 @@ $data = "Todavia no se han añadido misiones";
  
 while ($row = mysqli_fetch_array($result)) {
 		
-		$data = $data . "<b>ID:</b> " .$row['id']." - <b>Recompensa:</b> " . $row['Recompensa'] . " -<b> Pokeparada:</b> ". $row['Pokeparada'] . "\n";
+		$data = $data . "<b>ID:</b> " .$row['id']." - <b>Recompensa:</b> " . $row['Recompensa'] . " -<b> Pokeparada:</b> ". $row['Pokeparada'] .. "https://www.google.com/maps/?q=".$row['Latitude'].",".$row['Longitude'] ."\n";
     	
     }
  }
@@ -1030,7 +1030,7 @@ $data = "Todavia no se han añadido misiones";
  
 while ($row = mysqli_fetch_array($result)) {
 		
-		$data = $data . "<b>ID:</b> " .$row['id']." - <b>Recompensa:</b> " . $row['Recompensa'] . " -<b> Pokeparada:</b> ". $row['Pokeparada'] . "https://www.google.com/maps/?q=".$row['Latitude'].",".$row['Longitude']."\n";
+		$data = $data . "<b>ID:</b> " .$row['id']." - <b>Recompensa:</b> " . $row['Recompensa'] . " -<b> Pokeparada:</b> ". $row['Pokeparada']."\n";
     	
     }
  }
