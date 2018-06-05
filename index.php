@@ -643,7 +643,7 @@ foreach ($pokeparada as $key => $row) {
 	
 	
 	
-	else if(substr($update->message->text, 0, 5) === "/algo")
+	else if(($update->message->reply_to_message->location->latitude) != null)
     {
 		
 		
