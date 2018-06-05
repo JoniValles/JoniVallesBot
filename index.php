@@ -643,7 +643,7 @@ foreach ($pokeparada as $key => $row) {
 	
 	
 	
-	else if(!is_null($update->message->chat->id))
+	else if(!is_null($update->message->reply_to_message->message_id))
     {
 		
 		
@@ -675,8 +675,8 @@ $conn->set_charset("utf8");
  unset($data[0]);
  unset($data[1]);
  $finalData = implode(" ", $data);
- $latitude = $update->message->reply_to_message->location->latitude;
- $longitude = $update->message->reply_to_message->location->latitude;
+ $latitude = $update->message->location->latitude;
+ $longitude = $update->message->location->latitude;
  $username = $update->message->username;
  $a = $update->message->chat->type;
  //$x = $update->message->reply_to_message->text;
