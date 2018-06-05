@@ -124,9 +124,9 @@ try {
      			]);
     }*/else if($update->message->text == '/prueba') {
 			http_response_code(200);
-    	$response = $client->sendPhoto([
+    	$response = $client->sendMessage([
         		'chat_id' => $update->message->chat->id,
-			'photo' => 'https://i.imgur.com/Jo1U31G.jpg'
+			'text' => $update->message->reply_to_message->chat->id
      			]);
     }else if($update->message->text == '/tecla') {
 			
