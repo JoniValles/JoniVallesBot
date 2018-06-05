@@ -684,9 +684,8 @@ $conn->set_charset("utf8");
  //$x = $update->message->reply_to_message->text;
  $id = explode(" ", $update->message->reply_to_message->text);
 
- $query = "insert into mision (Latitude, Longitude) values ($latitude,$longitude);";
- //$query = "insert into mision (Recompensa, Pokeparada) values ('$trainer[1]','$finalData')";
-
+ //$query = "insert into mision (Latitude, Longitude) values ($latitude,$longitude);";
+	$query = "update mision set Latitude = $latitude , Longitude = $longitude where id = '$id[1]';";
  //executing the query 
 
  mysqli_query($conn, $query) or die('Error querying database.');
