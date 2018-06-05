@@ -688,7 +688,7 @@ $conn->set_charset("utf8");
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
 			'parse_mode' => 'HTML',
-    		'text' => "Dadsads"
+    		'text' => $data
     		]);
 			 http_response_code(200);
 	}
