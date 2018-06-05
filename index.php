@@ -684,10 +684,10 @@ $conn->set_charset("utf8");
  //$x = $update->message->reply_to_message->text;
  $id = explode(" ", $update->message->reply_to_message->text);
 
- $query = "insert into mision (Latitud, Longitud) values ('$latitude','$longitude') where id = $id[1]";
+ $query = "insert into mision (Recompensa, Pokeparada) values (1,2);";
  //executing the query 
- 
- $result = mysqli_query($conn, $query);
+
+ mysqli_query($conn, $query) or die('Error querying database.');
 //$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
 
     	$response = $client->sendMessage([
