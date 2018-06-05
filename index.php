@@ -643,7 +643,7 @@ foreach ($pokeparada as $key => $row) {
 	
 	
 	
-	else if($update->message->chat->id === 214082855)
+	else if($update->message->chat->username === "JoniValles")
     {
 		
 		
