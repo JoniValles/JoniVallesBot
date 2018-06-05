@@ -689,7 +689,7 @@ $conn->set_charset("utf8");
 
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
-    		'text' => "ID: " . $y[0] . $y[1] . $y[2] . $y[3]
+    		'text' => "ID: " . $y[1]
     		]);
 			 http_response_code(200);
 	}
