@@ -684,7 +684,7 @@ $conn->set_charset("utf8");
 
  $query = "insert into mision (Latitud, Longitud) values ('$latitude','$longitude') where id = $y[1]";
  //executing the query 
- mysqli_query($conn, $query) or die('Error querying database.');
+ //mysqli_query($conn, $query) or die('Error querying database.');
 //$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
 
     	$response = $client->sendMessage([
